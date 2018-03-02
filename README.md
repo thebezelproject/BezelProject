@@ -23,14 +23,13 @@ Exit out of Emulation Station by pressing F4 (or remote into the Pi using someth
 
 Type the following commands:
 
-cd /home/pi/RetroPie/retropiemenu/ 
-wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
-chmod +x "bezelproject.sh"
+***cd /home/pi/RetroPie/retropiemenu/*** 
+
+***wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh***
+
+***chmod +x "bezelproject.sh"***
 
 Restart Emulation Station and you should then see the new script in the RetroPie menu.
 
----------------
-Contact information:
 
-Look for the Facebook group called:  Bezel Bin
 
