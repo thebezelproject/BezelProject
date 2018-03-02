@@ -63,6 +63,7 @@ function uninstall_bezel_pack() {
 function download_bezel() {
     local themes=(
         'thebezelproject GCEVectrex'
+        'thebezelproject SuperGrafx'
     )
     while true; do
         local theme
@@ -135,10 +136,12 @@ clear
             --ok-label OK --cancel-label Exit \
             --menu "Which system would you like to disable bezels for?" 25 75 20 \
             1 "GCEVectrex" \
+            2 "SuperGrafx" \
             2>&1 > /dev/tty)
 
         case "$choice" in
             1) hide_bezel vectrex ;;
+            2) hide_bezel supergrafx ;;
             *)  break ;;
         esac
     done
@@ -153,10 +156,12 @@ clear
             --ok-label OK --cancel-label Exit \
             --menu "Which system would you like to enable bezels for?" 25 75 20 \
             1 "GCEVectrex" \
+            2 "SuperGrafx" \
             2>&1 > /dev/tty)
 
         case "$choice" in
             1) show_bezel gcevectrex ;;
+            2) show_bezel supergrafx ;;
             *)  break ;;
         esac
     done
