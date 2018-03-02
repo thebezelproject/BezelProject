@@ -19,12 +19,14 @@ function main_menu() {
             1 "Download system bezel pack (will automatcally enable bezels)" \
             2 "Enable system bezel pack" \
             3 "Disable system bezel pack" \
+            4 "Information:  Retroarch cores setup for bezels per system" \
             2>&1 > /dev/tty)
 
         case "$choice" in
             1) download_bezel  ;;
             2) enable_bezel  ;;
             3) disable_bezel  ;;
+            4) retroarch_bezelinfo  ;;
             *)  break ;;
         esac
     done
@@ -61,7 +63,6 @@ function uninstall_bezel_pack() {
 function download_bezel() {
     local themes=(
         'thebezelproject GCEVectrex'
-        'thebezelproject SuperGrafx'
     )
     while true; do
         local theme
@@ -134,12 +135,10 @@ clear
             --ok-label OK --cancel-label Exit \
             --menu "Which system would you like to disable bezels for?" 25 75 20 \
             1 "GCEVectrex" \
-            2 "SuperGrafx" \
             2>&1 > /dev/tty)
 
         case "$choice" in
             1) hide_bezel vectrex ;;
-            2) hide_bezel supergrafx ;;
             *)  break ;;
         esac
     done
@@ -154,12 +153,10 @@ clear
             --ok-label OK --cancel-label Exit \
             --menu "Which system would you like to enable bezels for?" 25 75 20 \
             1 "GCEVectrex" \
-            2 "SuperGrafx" \
             2>&1 > /dev/tty)
 
         case "$choice" in
             1) show_bezel gcevectrex ;;
-            2) show_bezel supergrafx ;;
             *)  break ;;
         esac
     done
@@ -1678,7 +1675,60 @@ supergamemachine)
 esac
 }
 
+function retroarch_bezelinfo() {
 
+echo "The Bezel Project is setup with the following sytem-to-core mapping." > /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+
+echo "To show a specific game bezel, Retroarch must have an override config file for each game.  These " >> /tmp/bezelprojectinfo.txt
+echo "configuration files are saved in special directories that are named according to the Retroarch " >> /tmp/bezelprojectinfo.txt
+echo "emulator core that system uses." >> /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+
+echo "The supplied Retroarch configuration files for the bezel utility are setup to use certain " >> /tmp/bezelprojectinfo.txt
+echo "emulators for certain systems." >> /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+
+echo "In order for the supplied bezels to be shown, you must be using the proper Retroarch emulator " >> /tmp/bezelprojectinfo.txt
+echo "for a system listed in the table below." >> /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+
+echo "This table lists all of the systems that have the abilty to show bezels that The Bezel Project " >> /tmp/bezelprojectinfo.txt
+echo "hopes to make bezels for." >> /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+
+echo "System                                          Retroarch Emulator" >> /tmp/bezelprojectinfo.txt
+echo "Atari 2600                                      lr-stella" >> /tmp/bezelprojectinfo.txt
+echo "Atari 5200                                      lr-atari800" >> /tmp/bezelprojectinfo.txt
+echo "Atari 7800                                      lr-prosystem" >> /tmp/bezelprojectinfo.txt
+echo "ColecoVision                                    lr-bluemsx" >> /tmp/bezelprojectinfo.txt
+echo "GCE Vectrex                                     lr-vecx" >> /tmp/bezelprojectinfo.txt
+echo "NEC PC Engine CD                                lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
+echo "NEC PC Engine                                   lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
+echo "NEC SuperGrafx                                  lr-beetle-supergrafx" >> /tmp/bezelprojectinfo.txt
+echo "NEC TurboGrafx-CD                               lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
+echo "NEC TurboGrafx-16                               lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo 64                                     lr-Mupen64plus" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Entertainment System                   lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Famicom Disk System                    lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Famicom                                lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Super Famicom                          lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
+echo "Sega 32X                                        lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega CD                                         lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega Genesis                                    lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega Master System                              lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega Mega Drive                                 lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega Mega Drive Japan                           lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega SG-1000                                    lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sony PlayStation                                lr-pcsx-rearmed" >> /tmp/bezelprojectinfo.txt
+echo "Super Nintendo Entertainment System             lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
+echo "" >> /tmp/bezelprojectinfo.txt
+
+dialog --backtitle "The Bezel Project" \
+--title "The Bezel Project - Bezel Pack Utility" \
+--textbox /tmp/bezelprojectinfo.txt 30 110
+}
 
 # Main
 
