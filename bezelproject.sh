@@ -98,7 +98,7 @@ function download_bezel() {
             U)  #update install script to get new theme listings
                 cd "/home/pi/RetroPie/retropiemenu" 
                 mv "bezelproject.sh" "bezelproject.sh.bkp" 
-                wget "https://raw.githubusercontent.com/dmmarti/BezelProject/master/bezelproject.sh" 
+                wget "https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh" 
                 chmod 777 "bezelproject.sh" 
                 exit
                 ;;
