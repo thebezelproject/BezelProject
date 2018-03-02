@@ -31,8 +31,5 @@ Type the following commands:
 
 Restart Emulation Station and you should then see the new script in the RetroPie menu.
 
----------------
-Contact information:
 
-Look for the Facebook group called:  Bezel Bin
 
