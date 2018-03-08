@@ -49,9 +49,9 @@ function install_bezel_pack() {
     atheme=`echo ${theme} | sed 's/.*/\L&/'`
 
     if [[ "${atheme}" == "mame" ]];then
-      mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha"
-      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003"
-      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
+      mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010" 2> /dev/null
     fi
 
     git clone "https://github.com/$repo/bezelproject-$theme.git" "/tmp/${theme}"
