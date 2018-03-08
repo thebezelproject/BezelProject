@@ -4,8 +4,8 @@
 
 # Welcome
  dialog --backtitle "The Bezel Project" --title "The Bezel Project - Bezel Pack Utility" \
-    --yesno "\nThe Bezel Project Bezel Utility menu.\n\nThis utility will provide a downloader for Retroarach system bezel packs to be used for various systems within RetroPie.\n\nThese bezel packs will only work if the ROMs you are using are named according to the No-Intro naming convention used by EmuMovies/HyperSpin.\n\nThis utility provides a download for a bezel pack for a system and includes a PNG bezel file for every ROM for that system.  The download will also include the necessary configuration files needed for Retroarch to show them.  The script will also update the required retroarch.cfg files for the emulators located in the /opt/retropie/configs directory.  These changes are necessary to show the PNG bezels with an opacity of 1.\n\nPeriodically, new bezel packs are completed and you will need to run the script updater to download the newest version to see these additional packs.\n\n\nDo you want to proceed?" \
-    25 110 2>&1 > /dev/tty \
+    --yesno "\nThe Bezel Project Bezel Utility menu.\n\nThis utility will provide a downloader for Retroarach system bezel packs to be used for various systems within RetroPie.\n\nThese bezel packs will only work if the ROMs you are using are named according to the No-Intro naming convention used by EmuMovies/HyperSpin.\n\nThis utility provides a download for a bezel pack for a system and includes a PNG bezel file for every ROM for that system.  The download will also include the necessary configuration files needed for Retroarch to show them.  The script will also update the required retroarch.cfg files for the emulators located in the /opt/retropie/configs directory.  These changes are necessary to show the PNG bezels with an opacity of 1.\n\nPeriodically, new bezel packs are completed and you will need to run the script updater to download the newest version to see these additional packs.\n\n**NOTE**\nThe MAME bezel back is inclusive for any roms located in the arcade/fba/mame-libretro rom folders.\n\n\nDo you want to proceed?" \
+    28 110 2>&1 > /dev/tty \
     || exit
 
 
@@ -46,11 +46,25 @@ function install_bezel_pack() {
         theme="default"
         repo="default"
     fi
+    atheme=`echo ${theme} | sed 's/.*/\L&/'`
+
+    if [[ "${atheme}" == "mame" ]];then
+      mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha"
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003"
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
+    fi
+
     git clone "https://github.com/$repo/bezelproject-$theme.git" "/tmp/${theme}"
     cp -r "/tmp/${theme}/retroarch/" /opt/retropie/configs/all/
     sudo rm -rf "/tmp/${theme}"
-    atheme=`echo ${theme} | sed 's/.*/\L&/'`
-    show_bezel "${atheme}"
+
+    if [[ "${atheme}" == "mame" ]];then
+      show_bezel "arcade"
+      show_bezel "fba"
+      show_bezel "mame-libretro"
+    else
+      show_bezel "${atheme}"
+    fi
 }
 
 function uninstall_bezel_pack() {
@@ -58,12 +72,18 @@ function uninstall_bezel_pack() {
     if [[ -d "/opt/retropie/configs/all/retroarch/overlay/GameBezels/$theme" ]]; then
         rm -rf "/opt/retropie/configs/all/retroarch/overlay/GameBezels/$theme"
     fi
+    if [[ "${theme}" == "MAME" ]]; then
+      if [[ -d "/opt/retropie/configs/all/retroarch/overlay/ArcadeBezels" ]]; then
+        rm -rf "/opt/retropie/configs/all/retroarch/overlay/ArcdeBezels"
+      fi
+    fi
 }
 
 function download_bezel() {
     local themes=(
         'thebezelproject Atari7800'
         'thebezelproject GCEVectrex'
+        'thebezelproject MAME'
         'thebezelproject Sega32X'
         'thebezelproject SG-1000'
         'thebezelproject SNES'
@@ -143,6 +163,9 @@ clear
             2 "SuperGrafx" \
             3 "Sega32X" \
             4 "SG-1000" \
+            5 "Arcade" \
+            6 "Final Burn Alpha" \
+            7 "MAME Libretro" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -150,6 +173,9 @@ clear
             2) hide_bezel supergrafx ;;
             3) hide_bezel sega32x ;;
             4) hide_bezel sg-1000 ;;
+            5) hide_bezel arcade ;;
+            6) hide_bezel fba ;;
+            7) hide_bezel mame-libretro ;;
             *)  break ;;
         esac
     done
@@ -167,6 +193,9 @@ clear
             2 "SuperGrafx" \
             3 "Sega32X" \
             4 "SG-1000" \
+            5 "Arcade" \
+            6 "Final Burn Alpha" \
+            7 "MAME Libretro" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -174,6 +203,9 @@ clear
             2) show_bezel supergrafx ;;
             3) show_bezel sega32x ;;
             4) show_bezel sg-1000 ;;
+            5) show_bezel arcade ;;
+            6) show_bezel fba ;;
+            7) show_bezel mame-libretro ;;
             *)  break ;;
         esac
     done
