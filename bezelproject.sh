@@ -81,9 +81,10 @@ function uninstall_bezel_pack() {
 
 function download_bezel() {
     local themes=(
+        'thebezelproject MAME'
         'thebezelproject Atari7800'
         'thebezelproject GCEVectrex'
-        'thebezelproject MAME'
+        'thebezelproject NES'
         'thebezelproject Sega32X'
         'thebezelproject SG-1000'
         'thebezelproject SNES'
