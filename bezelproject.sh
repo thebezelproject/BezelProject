@@ -482,14 +482,20 @@ nes)
   if [[ ${ifexist} > 0 ]]
   then
     cp /opt/retropie/configs/nes/retroarch.cfg /opt/retropie/configs/nes/retroarch.cfg.bkp
-    cat /opt/retropie/configs/nes/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cat /opt/retropie/configs/nes/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport |grep -v force_aspect > /tmp/retroarch.cfg
     cp /tmp/retroarch.cfg /opt/retropie/configs/nes/retroarch.cfg
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Nintendo-Entertainment-System.cfg"' /opt/retropie/configs/nes/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/nes/retroarch.cfg
+    sed -i '4i aspect_ratio_index = "16"' /opt/retropie/configs/atarilynx/retroarch.cfg
+    sed -i '5i video_force_aspect = "true"' /opt/retropie/configs/atarilynx/retroarch.cfg
+    sed -i '6i video_aspect_ratio = "-1.000000"' /opt/retropie/configs/atarilynx/retroarch.cfg
   else
     cp /opt/retropie/configs/nes/retroarch.cfg /opt/retropie/configs/nes/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Nintendo-Entertainment-System.cfg"' /opt/retropie/configs/nes/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/nes/retroarch.cfg
+    sed -i '4i aspect_ratio_index = "16"' /opt/retropie/configs/atarilynx/retroarch.cfg
+    sed -i '5i video_force_aspect = "true"' /opt/retropie/configs/atarilynx/retroarch.cfg
+    sed -i '6i video_aspect_ratio = "-1.000000"' /opt/retropie/configs/atarilynx/retroarch.cfg
   fi
   ;;
 pce-cd)
