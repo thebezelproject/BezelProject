@@ -167,6 +167,7 @@ clear
             5 "Arcade" \
             6 "Final Burn Alpha" \
             7 "MAME Libretro" \
+            8 "NES" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -177,6 +178,7 @@ clear
             5) hide_bezel arcade ;;
             6) hide_bezel fba ;;
             7) hide_bezel mame-libretro ;;
+            8) hide_bezel nes ;;
             *)  break ;;
         esac
     done
@@ -197,6 +199,7 @@ clear
             5 "Arcade" \
             6 "Final Burn Alpha" \
             7 "MAME Libretro" \
+            8 "NES" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -207,6 +210,7 @@ clear
             5) show_bezel arcade ;;
             6) show_bezel fba ;;
             7) show_bezel mame-libretro ;;
+            8) show_bezel nes ;;
             *)  break ;;
         esac
     done
