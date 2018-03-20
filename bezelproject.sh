@@ -84,6 +84,7 @@ function download_bezel() {
         'thebezelproject MAME'
         'thebezelproject Atari7800'
         'thebezelproject GCEVectrex'
+        'thebezelproject MASTERSYSTEM'
         'thebezelproject NES'
         'thebezelproject Sega32X'
         'thebezelproject SG-1000'
@@ -168,6 +169,7 @@ clear
             6 "Final Burn Alpha" \
             7 "MAME Libretro" \
             8 "NES" \
+            9 "MASTERSYSTEM" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -200,6 +202,7 @@ clear
             6 "Final Burn Alpha" \
             7 "MAME Libretro" \
             8 "NES" \
+            9 "MASTERSYSTEM" \
             2>&1 > /dev/tty)
 
         case "$choice" in
