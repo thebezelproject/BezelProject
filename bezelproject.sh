@@ -90,6 +90,7 @@ function download_bezel() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject SuperGrafx'
+        'thebezelproject Atari5200'
     )
     while true; do
         local theme
