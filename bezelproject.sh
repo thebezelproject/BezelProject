@@ -82,6 +82,7 @@ function uninstall_bezel_pack() {
 function download_bezel() {
     local themes=(
         'thebezelproject MAME'
+        'thebezelproject Atari5200'
         'thebezelproject Atari7800'
         'thebezelproject GCEVectrex'
         'thebezelproject MasterSystem'
@@ -90,7 +91,6 @@ function download_bezel() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject SuperGrafx'
-        'thebezelproject Atari5200'
     )
     while true; do
         local theme
@@ -171,6 +171,9 @@ clear
             7 "MAME Libretro" \
             8 "NES" \
             9 "MasterSystem" \
+            10 "Atari 5200" \
+            11 "Atari 7800" \
+            12 "SNES" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -182,6 +185,10 @@ clear
             6) hide_bezel fba ;;
             7) hide_bezel mame-libretro ;;
             8) hide_bezel nes ;;
+            9) hide_bezel mastersystem ;;
+            10) hide_bezel atari5200 ;;
+            11) hide_bezel atari7800 ;;
+            12) hide_bezel snes ;;
             *)  break ;;
         esac
     done
@@ -204,6 +211,9 @@ clear
             7 "MAME Libretro" \
             8 "NES" \
             9 "MasterSystem" \
+            10 "Atari 5200" \
+            11 "Atari 7800" \
+            12 "SNES" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -215,6 +225,10 @@ clear
             6) show_bezel fba ;;
             7) show_bezel mame-libretro ;;
             8) show_bezel nes ;;
+            9) show_bezel mastersystem ;;
+            10) show_bezel atari5200 ;;
+            11) show_bezel atari7800 ;;
+            12) show_bezel snes ;;
             *)  break ;;
         esac
     done
