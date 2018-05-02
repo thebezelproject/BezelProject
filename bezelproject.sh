@@ -86,6 +86,7 @@ function download_bezel() {
         'thebezelproject Atari7800'
         'thebezelproject GCEVectrex'
         'thebezelproject MasterSystem'
+        'thebezelproject MegaDrive'
         'thebezelproject NES'
         'thebezelproject Sega32X'
         'thebezelproject SG-1000'
@@ -174,6 +175,7 @@ clear
             10 "Atari 5200" \
             11 "Atari 7800" \
             12 "SNES" \
+            13 "MegaDrive" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -189,6 +191,7 @@ clear
             10) hide_bezel atari5200 ;;
             11) hide_bezel atari7800 ;;
             12) hide_bezel snes ;;
+            13) hide_bezel megadrive ;;
             *)  break ;;
         esac
     done
@@ -214,6 +217,7 @@ clear
             10 "Atari 5200" \
             11 "Atari 7800" \
             12 "SNES" \
+            13 "MegaDrive" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -229,6 +233,7 @@ clear
             10) show_bezel atari5200 ;;
             11) show_bezel atari7800 ;;
             12) show_bezel snes ;;
+            13) show_bezel megadrive ;;
             *)  break ;;
         esac
     done
