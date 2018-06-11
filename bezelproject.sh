@@ -74,7 +74,7 @@ function uninstall_bezel_pack() {
     fi
     if [[ "${theme}" == "MAME" ]]; then
       if [[ -d "/opt/retropie/configs/all/retroarch/overlay/ArcadeBezels" ]]; then
-        rm -rf "/opt/retropie/configs/all/retroarch/overlay/ArcdeBezels"
+        rm -rf "/opt/retropie/configs/all/retroarch/overlay/ArcadeBezels"
       fi
     fi
 }
