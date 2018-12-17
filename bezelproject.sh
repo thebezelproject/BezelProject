@@ -93,6 +93,7 @@ function download_bezel() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject SuperGrafx'
+        'thebezelproject PSX'
     )
     while true; do
         local theme
@@ -182,6 +183,7 @@ clear
             12 "SNES" \
             13 "MegaDrive" \
             14 "SegaCD" \
+            15 "PSX" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -199,6 +201,7 @@ clear
             12) hide_bezel snes ;;
             13) hide_bezel megadrive ;;
             14) hide_bezel segacd ;;
+            15) hide_bezel psx ;;
             *)  break ;;
         esac
     done
@@ -226,6 +229,7 @@ clear
             12 "SNES" \
             13 "MegaDrive" \
             14 "SegaCD" \
+            15 "PSX" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -243,6 +247,7 @@ clear
             12) show_bezel snes ;;
             13) show_bezel megadrive ;;
             14) show_bezel segacd ;;
+            15) show_bezel psx ;;
             *)  break ;;
         esac
     done
