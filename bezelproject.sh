@@ -82,6 +82,7 @@ function uninstall_bezel_pack() {
 function download_bezel() {
     local themes=(
         'thebezelproject MAME'
+        'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
         'thebezelproject GCEVectrex'
@@ -188,6 +189,7 @@ clear
             15 "PSX" \
             16 "TG16" \
             17 "TG-CD" \
+            18 "Atari 2600" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -208,6 +210,7 @@ clear
             15) hide_bezel psx ;;
             16) hide_bezel tg16 ;;
             17) hide_bezel tg-cd ;;
+            18) hide_bezel atari2600 ;;
             *)  break ;;
         esac
     done
@@ -238,6 +241,7 @@ clear
             15 "PSX" \
             16 "TG16" \
             17 "TG-CD" \
+            18 "Atari 2600" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -258,6 +262,7 @@ clear
             15) show_bezel psx ;;
             16) show_bezel tg16 ;;
             17) show_bezel tg-cd ;;
+            18) show_bezel atari2600 ;;
             *)  break ;;
         esac
     done
