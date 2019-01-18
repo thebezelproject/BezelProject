@@ -97,6 +97,7 @@ function download_bezel() {
         'thebezelproject PSX'
         'thebezelproject TG16'
         'thebezelproject TG-CD'
+        'thebezelproject ColecoVision'
     )
     while true; do
         local theme
@@ -190,6 +191,7 @@ clear
             16 "TG16" \
             17 "TG-CD" \
             18 "Atari 2600" \
+            19 "ColecoVision" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -211,6 +213,7 @@ clear
             16) hide_bezel tg16 ;;
             17) hide_bezel tg-cd ;;
             18) hide_bezel atari2600 ;;
+            19) hide_bezel coleco ;;
             *)  break ;;
         esac
     done
@@ -242,6 +245,7 @@ clear
             16 "TG16" \
             17 "TG-CD" \
             18 "Atari 2600" \
+            19 "ColecoVision" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -263,6 +267,7 @@ clear
             16) show_bezel tg16 ;;
             17) show_bezel tg-cd ;;
             18) show_bezel atari2600 ;;
+            18) show_bezel coleco ;;
             *)  break ;;
         esac
     done
