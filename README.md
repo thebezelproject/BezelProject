@@ -35,7 +35,6 @@ Restart Emulation Station and you should then see the new script in the RetroPie
 Supported cores
 
 Arcade                                          lr-mame2003, lr-mame2010, lr-fba
-
 Atari 2600                                      lr-stella
 Atari 5200                                      lr-atari800
 Atari 7800                                      lr-prosystem
