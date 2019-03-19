@@ -35,29 +35,53 @@ Restart Emulation Station and you should then see the new script in the RetroPie
 Supported cores
 
 Arcade                                          lr-mame2003, lr-mame2010, lr-fba
+
 Atari 2600                                      lr-stella
+
 Atari 5200                                      lr-atari800
+
 Atari 7800                                      lr-prosystem
+
 ColecoVision                                    lr-bluemsx
+
 GCE Vectrex                                     lr-vecx
+
 NEC PC Engine CD                                lr-beetle-pce-fast
+
 NEC PC Engine                                   lr-beetle-pce-fast
+
 NEC SuperGrafx                                  lr-beetle-supergrafx
+
 NEC TurboGrafx-CD                               lr-beetle-pce-fast
+
 NEC TurboGrafx-16                               lr-beetle-pce-fast
+
 Nintendo 64                                     lr-Mupen64plus
+
 Nintendo Entertainment System                   lr-fceumm, lr-nestopia
+
 Nintendo Famicom Disk System                    lr-fceumm, lr-nestopia
+
 Nintendo Famicom                                lr-fceumm, lr-nestopia
+
 Nintendo Super Famicom                          lr-snes9x, lr-snes9x2010
+
 Sega 32X                                        lr-picodrive, lr-genesis-plus-gx
+
 Sega CD                                         lr-picodrive, lr-genesis-plus-gx
+
 Sega Genesis                                    lr-picodrive, lr-genesis-plus-gx
+
 Sega Master System                              lr-picodrive, lr-genesis-plus-gx
+
 Sega Mega Drive                                 lr-picodrive, lr-genesis-plus-gx
+
 Sega Mega Drive Japan                           lr-picodrive, lr-genesis-plus-gx
+
 Sega SG-1000                                    lr-genesis-plus-gx
+
 Sony PlayStation                                lr-pcsx-rearmed
+
 Super Nintendo Entertainment System             lr-snes9x, lr-snes9x2010
 
 
