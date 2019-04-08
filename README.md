@@ -19,6 +19,8 @@ To have global support, these bezel packs will only work if the ROMs you are usi
 -------
 INSTALLATION - using a Raspberry Pi build of RetroPie
 
+NOTE: do not install the script as user 'root'.  Only install the script as user 'pi'...otherwise it may cause future errors.
+
 Exit out of Emulation Station by pressing F4 (or remote into the Pi using something like Putty)
 
 Type the following commands:
