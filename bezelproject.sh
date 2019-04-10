@@ -20,6 +20,7 @@ function main_menu() {
             2 "Enable system bezel pack" \
             3 "Disable system bezel pack" \
             4 "Information:  Retroarch cores setup for bezels per system" \
+            5 "Uninstall the bezel project completely" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -27,6 +28,7 @@ function main_menu() {
             2) enable_bezel  ;;
             3) disable_bezel  ;;
             4) retroarch_bezelinfo  ;;
+            5) removebezelproject  ;;
             *)  break ;;
         esac
     done
@@ -78,6 +80,33 @@ function uninstall_bezel_pack() {
         rm -rf "/opt/retropie/configs/all/retroarch/overlay/ArcadeBezels"
       fi
     fi
+}
+
+function removebezelproject() {
+hide_bezel vectrex
+hide_bezel supergrafx
+hide_bezel sega32x
+hide_bezel sg-1000
+hide_bezel arcade
+hide_bezel fba
+hide_bezel mame-libretro
+hide_bezel nes
+hide_bezel mastersystem
+hide_bezel atari5200
+hide_bezel atari7800
+hide_bezel snes
+hide_bezel megadrive
+hide_bezel segacd
+hide_bezel psx
+hide_bezel tg16
+hide_bezel tg-cd
+hide_bezel atari2600
+hide_bezel coleco
+hide_bezel n64
+
+rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
+rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
+
 }
 
 function download_bezel() {

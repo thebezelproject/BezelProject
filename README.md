@@ -34,6 +34,31 @@ Type the following commands:
 Restart Emulation Station and you should then see the new script in the RetroPie menu.
 
 -------
+UNINSTALL
+
+NOTE: the uninstall script will not remove the Retroarch game config files due to the possibility of user's saving game specific override controller mapping. This will, however, delete all bezel usage from The Bezel Project but keeps any existing game override controller mapping.
+
+To automatically remove The Bezel Project, execute that option in the script.
+
+To manually remove The Bezel Project, delete the following directories.
+
+/opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
+/opt/retropie/configs/all/retroarch/overlay/GameBezels
+
+Edit the retroarch.cfg files located in each emulator's folder located here:
+
+/opt/retropie/configs/(emulatorname)
+
+And remove the following lines from the file that begin with the following:
+
+input_overlay = xxxxxx 
+input_overlay_opacity = xxxxx
+
+To remove the Retroarch game override config files, delete the core named folders located here:
+
+/opt/retropie/configs/all/retroarch/config/(core named folder)
+
+-------
 Supported cores
 
 Arcade                                          lr-mame2003, lr-mame2010, lr-fba
