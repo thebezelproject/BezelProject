@@ -106,6 +106,7 @@ hide_bezel n64
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
+rm /home/pi/RetroPie/retropiemenu/bezelproject.sh
 
 }
 

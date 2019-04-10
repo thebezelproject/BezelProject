@@ -58,6 +58,10 @@ To remove the Retroarch game override config files, delete the core named folder
 
 /opt/retropie/configs/all/retroarch/config/(core named folder)
 
+Remove the bezelproject.sh file from here:
+
+/home/pi/RetroPie/retropiemenu/
+
 -------
 Supported cores
 
