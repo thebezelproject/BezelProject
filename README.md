@@ -43,6 +43,7 @@ To automatically remove The Bezel Project, execute that option in the script.
 To manually remove The Bezel Project, delete the following directories.
 
 /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
+
 /opt/retropie/configs/all/retroarch/overlay/GameBezels
 
 Edit the retroarch.cfg files located in each emulator's folder located here:
@@ -52,6 +53,7 @@ Edit the retroarch.cfg files located in each emulator's folder located here:
 And remove the following lines from the file that begin with the following:
 
 input_overlay = xxxxxx 
+
 input_overlay_opacity = xxxxx
 
 To remove the Retroarch game override config files, delete the core named folders located here:
