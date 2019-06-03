@@ -103,6 +103,7 @@ hide_bezel tg-cd
 hide_bezel atari2600
 hide_bezel coleco
 hide_bezel n64
+hide_bezel sfc
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -126,6 +127,7 @@ function download_bezel() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject SuperGrafx'
+        'thebezelproject SFC'
         'thebezelproject PSX'
         'thebezelproject TG16'
         'thebezelproject TG-CD'
@@ -228,6 +230,7 @@ clear
             18 "Atari 2600" \
             19 "ColecoVision" \
             20 "Nintendo 64" \
+            21 "Super Famicom" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -251,6 +254,7 @@ clear
             18) hide_bezel atari2600 ;;
             19) hide_bezel coleco ;;
             20) hide_bezel n64 ;;
+            21) hide_bezel sfc ;;
             *)  break ;;
         esac
     done
@@ -284,6 +288,7 @@ clear
             18 "Atari 2600" \
             19 "ColecoVision" \
             20 "Nintendo 64" \
+            21 "Super Famicom" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -307,6 +312,7 @@ clear
             18) show_bezel atari2600 ;;
             19) show_bezel coleco ;;
             20) show_bezel n64 ;;
+            21) show_bezel sfc ;;
             *)  break ;;
         esac
     done
