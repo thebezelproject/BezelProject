@@ -16,6 +16,9 @@ The instructions below will demonstrate how to instal the script and have it sho
 ***NOTE***
 To have global support, these bezel packs will only work if the ROMs you are using are named according to the No-Intro naming convention used by EmuMovies/HyperSpin.
 
+Systems with shared Retroarch cores and filenames: 
+Only one bezel can exist for a specific game name, so systems that share the same Retroarch core and rom filename will use the same bezel.
+
 -------
 INSTALLATION - using a Raspberry Pi build of RetroPie
 
@@ -96,6 +99,10 @@ Nintendo Entertainment System                   lr-fceumm, lr-nestopia
 Nintendo Famicom Disk System                    lr-fceumm, lr-nestopia
 
 Nintendo Famicom                                lr-fceumm, lr-nestopia
+
+Nintendo Game Boy                               lr-gambatte, lr-mgba
+
+Nintendo Game Boy Color                         lr-gambatte, lr-mgba
 
 Nintendo Super Famicom                          lr-snes9x, lr-snes9x2010
 
