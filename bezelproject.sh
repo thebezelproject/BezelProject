@@ -8,7 +8,31 @@
     28 110 2>&1 > /dev/tty \
     || exit
 
-
+# Declare associative array linking system names to display names
+declare -A system_names=( ['vectrex']='GCEVectrex' 
+					 ['supergrafx']='SuperGrafx' 
+					 ['sega32x']='Sega32X' 
+					 ['sg-1000']='SG-1000' 
+					 ['arcade']='Arcade' 
+					 ['fba']='Final Burn Alpha' 
+					 ['mame-libretro']='MAME Libretro' 
+					 ['nes']='NES' 
+					 ['mastersystem']='MasterSystem' 
+					 ['atari5200']='Atari 5200' 
+					 ['atari7800']='Atari 7800' 
+					 ['snes']='SNES' 
+					 ['megadrive']='MegaDrive' 
+					 ['segacd']='SegaCD' 
+					 ['psx']='PSX' 
+					 ['tg16']='TG16' 
+					 ['tg-cd']='TG-CD' 
+					 ['atari2600']='Atari 2600' 
+					 ['coleco']='ColecoVision' 
+					 ['n64']='Nintendo 64'
+					 ['sfc']='Super Famicom' 
+					 ['gb']='Game Boy' 
+					 ['gbc']='Game Boy Color' ) 
+      
 function main_menu() {
     local choice
 
@@ -206,129 +230,61 @@ function download_bezel() {
     done
 }
 
+function disable_bezels() {
+	clear
+	while true; do
 
-function disable_bezel() {
+		cmd=(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
+			--ok-label OK --cancel-label Exit \
+			--separate-output \
+			--checklist "Which systems would you like to disable bezels for?" 25 75 20)
+			
+		local i=1
+		local options=()
+		for system in "${!system_names[@]}"; do
+			options+=($i "${system_names[${system}]}" off)
+			((i++))
+		done
+	
+		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+		[[ -z "$choices" ]] && break
+		for choice in $choices
+		do
+			keys=(${!system_names[@]})
+			emulator=${keys[${choice}-1]}
+			echo 'Disabling bezels for '"${system_names[${emulator}]}"'...'
+			hide_bezel $emulator
+		done
+	done
+}   
 
-clear
-    while true; do
-        choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
-            --ok-label OK --cancel-label Exit \
-            --menu "Which system would you like to disable bezels for?" 25 75 20 \
-            1 "GCEVectrex" \
-            2 "SuperGrafx" \
-            3 "Sega32X" \
-            4 "SG-1000" \
-            5 "Arcade" \
-            6 "Final Burn Alpha" \
-            7 "MAME Libretro" \
-            8 "NES" \
-            9 "MasterSystem" \
-            10 "Atari 5200" \
-            11 "Atari 7800" \
-            12 "SNES" \
-            13 "MegaDrive" \
-            14 "SegaCD" \
-            15 "PSX" \
-            16 "TG16" \
-            17 "TG-CD" \
-            18 "Atari 2600" \
-            19 "ColecoVision" \
-            20 "Nintendo 64" \
-            21 "Super Famicom" \
-            22 "Game Boy" \
-            23 "Game Boy Color" \
-            2>&1 > /dev/tty)
+function enable_bezels() {
+	clear
 
-        case "$choice" in
-            1) hide_bezel vectrex ;;
-            2) hide_bezel supergrafx ;;
-            3) hide_bezel sega32x ;;
-            4) hide_bezel sg-1000 ;;
-            5) hide_bezel arcade ;;
-            6) hide_bezel fba ;;
-            7) hide_bezel mame-libretro ;;
-            8) hide_bezel nes ;;
-            9) hide_bezel mastersystem ;;
-            10) hide_bezel atari5200 ;;
-            11) hide_bezel atari7800 ;;
-            12) hide_bezel snes ;;
-            13) hide_bezel megadrive ;;
-            14) hide_bezel segacd ;;
-            15) hide_bezel psx ;;
-            16) hide_bezel tg16 ;;
-            17) hide_bezel tg-cd ;;
-            18) hide_bezel atari2600 ;;
-            19) hide_bezel coleco ;;
-            20) hide_bezel n64 ;;
-            21) hide_bezel sfc ;;
-            22) hide_bezel gb ;;
-            23) hide_bezel gbc ;;
-            *)  break ;;
-        esac
-    done
+	while true; do
+		local options=()
+		
+		cmd=(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
+			--ok-label OK --cancel-label Exit \
+			--separate-output \
+			--checklist "Which systems would you like to enable bezels for?" 25 75 20)
 
-}
-
-function enable_bezel() {
-
-clear
-    while true; do
-        choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
-            --ok-label OK --cancel-label Exit \
-            --menu "Which system would you like to enable bezels for?" 25 75 20 \
-            1 "GCEVectrex" \
-            2 "SuperGrafx" \
-            3 "Sega32X" \
-            4 "SG-1000" \
-            5 "Arcade" \
-            6 "Final Burn Alpha" \
-            7 "MAME Libretro" \
-            8 "NES" \
-            9 "MasterSystem" \
-            10 "Atari 5200" \
-            11 "Atari 7800" \
-            12 "SNES" \
-            13 "MegaDrive" \
-            14 "SegaCD" \
-            15 "PSX" \
-            16 "TG16" \
-            17 "TG-CD" \
-            18 "Atari 2600" \
-            19 "ColecoVision" \
-            20 "Nintendo 64" \
-            21 "Super Famicom" \
-            22 "Game Boy" \
-            23 "Game Boy Color" \
-            2>&1 > /dev/tty)
-
-        case "$choice" in
-            1) show_bezel gcevectrex ;;
-            2) show_bezel supergrafx ;;
-            3) show_bezel sega32x ;;
-            4) show_bezel sg-1000 ;;
-            5) show_bezel arcade ;;
-            6) show_bezel fba ;;
-            7) show_bezel mame-libretro ;;
-            8) show_bezel nes ;;
-            9) show_bezel mastersystem ;;
-            10) show_bezel atari5200 ;;
-            11) show_bezel atari7800 ;;
-            12) show_bezel snes ;;
-            13) show_bezel megadrive ;;
-            14) show_bezel segacd ;;
-            15) show_bezel psx ;;
-            16) show_bezel tg16 ;;
-            17) show_bezel tg-cd ;;
-            18) show_bezel atari2600 ;;
-            19) show_bezel coleco ;;
-            20) show_bezel n64 ;;
-            21) show_bezel sfc ;;
-            22) show_bezel gb ;;
-            23) show_bezel gbc ;;
-            *)  break ;;
-        esac
-    done
-
+		local i=1
+		for system in "${!system_names[@]}"; do
+			options+=($i "${system_names[${system}]}" off)
+			((i++))
+		done
+	
+		choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+		[[ -z "$choices" ]] && break
+		for choice in $choices
+		do
+			keys=(${!system_names[@]})
+			emulator=${keys[${choice}-1]}
+			echo 'Enabling bezels for '"${system_names[${emulator}]}"'...'
+			show_bezel $emulator
+		done
+	done
 }
 
 function hide_bezel() {
