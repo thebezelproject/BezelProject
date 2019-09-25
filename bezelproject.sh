@@ -124,6 +124,7 @@ function download_bezel() {
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
         'thebezelproject GB'
+        'thebezelproject GBA'
         'thebezelproject GBC'
         'thebezelproject GCEVectrex'
         'thebezelproject MasterSystem'
