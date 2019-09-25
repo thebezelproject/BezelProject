@@ -245,9 +245,10 @@ clear
             21 "Super Famicom" \
             22 "Game Boy" \
             23 "Game Boy Color" \
-            24 "Sega Dreamcast" \
-            25 "Sega Naomi" \
-            26 "Sammy Atomiswave" \
+            24 "Game Boy Advance" \
+            25 "Sega Dreamcast" \
+            26 "Sega Naomi" \
+            27 "Sammy Atomiswave" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -314,9 +315,10 @@ clear
             21 "Super Famicom" \
             22 "Game Boy" \
             23 "Game Boy Color" \
-            24 "Sega Dreamcast" \
-            25 "Sega Naomi" \
-            26 "Sammy Atomiswave" \
+            24 "Game Boy Advance" \
+            25 "Sega Dreamcast" \
+            26 "Sega Naomi" \
+            27 "Sammy Atomiswave" \
             2>&1 > /dev/tty)
 
         case "$choice" in
