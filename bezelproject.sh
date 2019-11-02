@@ -110,6 +110,9 @@ hide_bezel gba
 hide_bezel dreamcast
 hide_bezel naomi
 hide_bezel atomiswave
+hide_bezel gamegear
+hide_bezel pcengine
+hide_bezel pce-cd
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -144,6 +147,7 @@ function download_bezel() {
         'thebezelproject Dreamcast'
         'thebezelproject Naomi'
         'thebezelproject Atomiswave'
+        'thebezelproject GameGear'
     )
     while true; do
         local theme
@@ -249,6 +253,7 @@ clear
             25 "Sega Dreamcast" \
             26 "Sega Naomi" \
             27 "Sammy Atomiswave" \
+            28 "GameGear" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -279,6 +284,9 @@ clear
             25) hide_bezel dreamcast ;;
             26) hide_bezel naomi ;;
             27) hide_bezel atomiswave ;;
+            28) hide_bezel gamegear ;;
+            29) hide_bezel pcengine ;;
+            30) hide_bezel pce-cd ;;
             *)  break ;;
         esac
     done
@@ -319,6 +327,7 @@ clear
             25 "Sega Dreamcast" \
             26 "Sega Naomi" \
             27 "Sammy Atomiswave" \
+            28 "GameGear" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -349,6 +358,9 @@ clear
             25) show_bezel dreamcast ;;
             26) show_bezel naomi ;;
             27) show_bezel atomiswave ;;
+            28) show_bezel gamegear ;;
+            29) show_bezel pcengine ;;
+            30) show_bezel pce-cd ;;
             *)  break ;;
         esac
     done
