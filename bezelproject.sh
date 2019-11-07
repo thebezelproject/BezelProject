@@ -148,6 +148,8 @@ function download_bezel() {
         'thebezelproject Naomi'
         'thebezelproject Atomiswave'
         'thebezelproject GameGear'
+        'thebezelproject PCEngine'
+        'thebezelproject PCE-CD'
     )
     while true; do
         local theme
@@ -254,6 +256,8 @@ clear
             26 "Sega Naomi" \
             27 "Sammy Atomiswave" \
             28 "GameGear" \
+            29 "PC Engine" \
+            30 "PC Engine-CD" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -328,6 +332,8 @@ clear
             26 "Sega Naomi" \
             27 "Sammy Atomiswave" \
             28 "GameGear" \
+            29 "PC Engine" \
+            30 "PC Engine-CD" \
             2>&1 > /dev/tty)
 
         case "$choice" in
