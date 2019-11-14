@@ -16,19 +16,25 @@ function main_menu() {
         choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
             --ok-label OK --cancel-label Exit \
             --menu "What action would you like to perform?" 25 75 20 \
-            1 "Download system bezel pack (will automatcally enable bezels)" \
-            2 "Enable system bezel pack" \
-            3 "Disable system bezel pack" \
-            4 "Information:  Retroarch cores setup for bezels per system" \
-            5 "Uninstall the bezel project completely" \
+            1 "Update install script - script will exit when updated" \
+            2 "View bezel styles available" \
+            3 "Download theme style bezel pack (will automatcally enable bezels)" \
+            4 "Download system style bezel pack (will automatcally enable bezels)" \
+            5 "Enable system bezel pack" \
+            6 "Disable system bezel pack" \
+            7 "Information:  Retroarch cores setup for bezels per system" \
+            8 "Uninstall the bezel project completely" \
             2>&1 > /dev/tty)
 
         case "$choice" in
-            1) download_bezel  ;;
-            2) enable_bezel  ;;
-            3) disable_bezel  ;;
-            4) retroarch_bezelinfo  ;;
-            5) removebezelproject  ;;
+            1) update_script  ;;
+            2) view_styles  ;;
+            3) download_bezel  ;;
+            4) download_bezelsa  ;;
+            5) enable_bezel  ;;
+            6) disable_bezel  ;;
+            7) retroarch_bezelinfo  ;;
+            8) removebezelproject  ;;
             *)  break ;;
         esac
     done
@@ -37,6 +43,72 @@ function main_menu() {
 #########################################################
 # Functions for download and enable/disable bezel packs #
 #########################################################
+
+function update_script() {
+if [[ -d "/home/pigaming" ]]; then
+   cd "/home/pigaming/RetroPie/retropiemenu"
+else
+   cd "/home/pi/RetroPie/retropiemenu"
+fi
+mv "bezelproject.sh" "bezelproject.sh.bkp"
+wget "https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh"
+chmod 777 "bezelproject.sh"
+exit
+}
+
+function view_styles() {
+
+  if [[ -f "bezelproject_themestyle.png" ]]; then
+
+    local choice
+
+    while true; do
+        choice=$(dialog --backtitle "Bezel Project - Bezel Styles" --title " View Styles " \
+            --ok-label OK --cancel-label Exit \
+            --menu "Chose an option to see the bezel style" 25 75 20 \
+            1 "Theme styled bezel" \
+            2 "System styled bezel" \
+            2>&1 > /dev/tty)
+
+        case "$choice" in
+            1) show_themestyle  ;;
+            2) show_sastyle  ;;
+            *)  break ;;
+        esac
+    done
+
+  else
+
+    local choice
+
+    while true; do
+        choice=$(dialog --backtitle "Bezel Project - Bezel Styles" --title " View Styles " \
+            --ok-label OK --cancel-label Exit \
+            --menu "Chose an option to see the bezel style" 25 75 20 \
+            1 "Download bezel samples" \
+            2>&1 > /dev/tty)
+
+        case "$choice" in
+            1) download_bezelsamples  ;;
+            *)  break ;;
+        esac
+    done
+  fi
+}
+
+function show_themestyle() {
+fbi --timeout 5 --once bezelproject_themestyle.png
+}
+
+function show_sastyle() {
+fbi --timeout 5 --once bezelproject_sastyle.png
+}
+
+function download_bezelsamples() {
+wget "https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject_themestyle.png"
+wget "https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject_sastyle.png"
+main_menu
+}
 
 function install_bezel_pack() {
     local theme="$1"
@@ -159,8 +231,6 @@ function download_bezel() {
         local status=()
         local default
 
-        options+=(U "Update install script - script will exit when updated")
-
         local i=1
         for theme in "${themes[@]}"; do
             theme=($theme)
@@ -179,22 +249,11 @@ function download_bezel() {
             fi
             ((i++))
         done
-        local cmd=(dialog --default-item "$default" --backtitle "$__backtitle" --menu "The Bezel Project -  Bezel Pack Downloader - Choose an option" 22 76 16)
+        local cmd=(dialog --default-item "$default" --backtitle "$__backtitle" --menu "The Bezel Project -  Theme Style Downloader - Choose an option" 22 76 16)
         local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
         default="$choice"
         [[ -z "$choice" ]] && break
         case "$choice" in
-            U)  #update install script to get new theme listings
-                if [[ -d "/home/pigaming" ]]; then
-                    cd "/home/pigaming/RetroPie/retropiemenu"
-                else
-                    cd "/home/pi/RetroPie/retropiemenu" 
-                fi
-                mv "bezelproject.sh" "bezelproject.sh.bkp" 
-                wget "https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh" 
-                chmod 777 "bezelproject.sh" 
-                exit
-                ;;
             *)  #install or update themes
                 theme=(${themes[choice-1]})
                 repo="${theme[0]}"
@@ -214,6 +273,109 @@ function download_bezel() {
                     esac
                 else
                     install_bezel_pack "$theme" "$repo"
+                fi
+                ;;
+        esac
+    done
+}
+
+function install_bezel_packsa() {
+    local theme="$1"
+    local repo="$2"
+    if [[ -z "$repo" ]]; then
+        repo="default"
+    fi
+    if [[ -z "$theme" ]]; then
+        theme="default"
+        repo="default"
+    fi
+    atheme=`echo ${theme} | sed 's/.*/\L&/'`
+
+    if [[ "${atheme}" == "mame" ]];then
+      mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010" 2> /dev/null
+    fi
+
+    git clone "https://github.com/$repo/bezelprojectsa-$theme.git" "/tmp/${theme}"
+    cp -r "/tmp/${theme}/retroarch/" /opt/retropie/configs/all/
+    sudo rm -rf "/tmp/${theme}"
+
+    if [[ "${atheme}" == "mame" ]];then
+      show_bezel "arcade"
+      show_bezel "fba"
+      show_bezel "mame-libretro"
+    else
+      show_bezel "${atheme}"
+    fi
+}
+
+function download_bezelsa() {
+    local themes=(
+        'thebezelproject C64'
+        'thebezelproject Atari2600'
+        'thebezelproject Atari5200'
+        'thebezelproject Atari7800'
+        'thebezelproject ColecoVision'
+        'thebezelproject Dreamcast'
+        'thebezelproject Famicom'
+        'thebezelproject GB'
+        'thebezelproject GBC'
+        'thebezelproject GBA'
+        'thebezelproject GameGear'
+        'thebezelproject GCEVectrex'
+    )
+    while true; do
+        local theme
+        local installed_bezelpacks=()
+        local repo
+        local options=()
+        local status=()
+        local default
+
+        local i=1
+        for theme in "${themes[@]}"; do
+            theme=($theme)
+            repo="${theme[0]}"
+            theme="${theme[1]}"
+            if [[ $theme == "MegaDrive" ]]; then
+              theme="Megadrive"
+            fi
+            if [[ -d "/opt/retropie/configs/all/retroarch/overlay/GameBezels/$theme" ]]; then
+                status+=("i")
+                options+=("$i" "Update or Uninstall $theme (installed)")
+                installed_bezelpacks+=("$theme $repo")
+            else
+                status+=("n")
+                options+=("$i" "Install $theme (not installed)")
+            fi
+            ((i++))
+        done
+        local cmd=(dialog --default-item "$default" --backtitle "$__backtitle" --menu "The Bezel Project -  System Style Downloader - Choose an option" 22 76 16)
+        local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+        default="$choice"
+        [[ -z "$choice" ]] && break
+        case "$choice" in
+            *)  #install or update themes
+                theme=(${themes[choice-1]})
+                repo="${theme[0]}"
+                theme="${theme[1]}"
+#                if [[ "${status[choice]}" == "i" ]]; then
+                if [[ -d "/opt/retropie/configs/all/retroarch/overlay/GameBezels/$theme" ]]; then
+                    options=(1 "Update $theme" 2 "Uninstall $theme")
+                    cmd=(dialog --backtitle "$__backtitle" --menu "Choose an option for the bezel pack" 12 40 06)
+                    local choice=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+                    case "$choice" in
+                        1)
+                            install_bezel_packsa "$theme" "$repo"
+                            ;;
+                        2)
+                            uninstall_bezel_pack "$theme"
+                            ;;
+                    esac
+                else
+                    install_bezel_packsa "$theme" "$repo"
                 fi
                 ;;
         esac
