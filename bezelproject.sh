@@ -185,6 +185,7 @@ hide_bezel atomiswave
 hide_bezel gamegear
 hide_bezel pcengine
 hide_bezel pce-cd
+hide_bezel atarilynx
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -222,6 +223,7 @@ function download_bezel() {
         'thebezelproject GameGear'
         'thebezelproject PCEngine'
         'thebezelproject PCE-CD'
+        'thebezelproject AtariLynx'
     )
     while true; do
         local theme
@@ -317,6 +319,7 @@ function download_bezelsa() {
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
+        'thebezelproject AtariLynx'
         'thebezelproject ColecoVision'
         'thebezelproject Dreamcast'
         'thebezelproject Famicom'
@@ -420,6 +423,7 @@ clear
             28 "GameGear" \
             29 "PC Engine" \
             30 "PC Engine-CD" \
+            31 "Atari Lynx" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -453,6 +457,7 @@ clear
             28) hide_bezel gamegear ;;
             29) hide_bezel pcengine ;;
             30) hide_bezel pce-cd ;;
+            31) hide_bezel atarilynx ;;
             *)  break ;;
         esac
     done
@@ -496,6 +501,7 @@ clear
             28 "GameGear" \
             29 "PC Engine" \
             30 "PC Engine-CD" \
+            31 "Atari Lynx" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -529,6 +535,7 @@ clear
             28) show_bezel gamegear ;;
             29) show_bezel pcengine ;;
             30) show_bezel pce-cd ;;
+            31) show_bezel atarilynx ;;
             *)  break ;;
         esac
     done
