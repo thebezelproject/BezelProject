@@ -186,6 +186,7 @@ hide_bezel gamegear
 hide_bezel pcengine
 hide_bezel pce-cd
 hide_bezel atarilynx
+hide_bezel intellivision
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -328,6 +329,7 @@ function download_bezelsa() {
         'thebezelproject GBA'
         'thebezelproject GameGear'
         'thebezelproject GCEVectrex'
+        'thebezelproject Intellivision'
     )
     while true; do
         local theme
@@ -424,6 +426,7 @@ clear
             29 "PC Engine" \
             30 "PC Engine-CD" \
             31 "Atari Lynx" \
+            32 "Intellivision" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -458,6 +461,7 @@ clear
             29) hide_bezel pcengine ;;
             30) hide_bezel pce-cd ;;
             31) hide_bezel atarilynx ;;
+            32) hide_bezel intellivision ;;
             *)  break ;;
         esac
     done
@@ -502,6 +506,7 @@ clear
             29 "PC Engine" \
             30 "PC Engine-CD" \
             31 "Atari Lynx" \
+            32 "Intellivision" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -536,6 +541,7 @@ clear
             29) show_bezel pcengine ;;
             30) show_bezel pce-cd ;;
             31) show_bezel atarilynx ;;
+            32) show_bezel intellivision ;;
             *)  break ;;
         esac
     done
@@ -765,6 +771,21 @@ fds)
     cp /opt/retropie/configs/fds/retroarch.cfg /opt/retropie/configs/fds/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Nintendo-Famicom-Disk-System.cfg"' /opt/retropie/configs/fds/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/fds/retroarch.cfg
+  fi
+  ;;
+intellivision)
+  ifexist=`cat /opt/retropie/configs/intellivision/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/intellivision/retroarch.cfg /opt/retropie/configs/intellivision/retroarch.cfg.bkp
+    cat /opt/retropie/configs/intellivision/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/intellivision/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Intellivision.cfg"' /opt/retropie/configs/intellivision/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/intellivision/retroarch.cfg
+  else
+    cp /opt/retropie/configs/intellivision/retroarch.cfg /opt/retropie/configs/intellivision/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Intellivision.cfg"' /opt/retropie/configs/intellivision/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/intellivision/retroarch.cfg
   fi
   ;;
 mastersystem)
