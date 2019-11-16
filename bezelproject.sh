@@ -334,6 +334,7 @@ function download_bezelsa() {
         'thebezelproject GCEVectrex'
         'thebezelproject Intellivision'
         'thebezelproject MasterSystem'
+        'thebezelproject N64'
         'thebezelproject NES'
     )
     while true; do
