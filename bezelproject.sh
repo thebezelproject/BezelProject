@@ -187,6 +187,7 @@ hide_bezel pcengine
 hide_bezel pce-cd
 hide_bezel atarilynx
 hide_bezel intellivision
+hide_bezel atarijaguar
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -225,6 +226,7 @@ function download_bezel() {
         'thebezelproject PCEngine'
         'thebezelproject PCE-CD'
         'thebezelproject AtariLynx'
+        'thebezelproject AtariJaguar'
     )
     while true; do
         local theme
@@ -320,6 +322,7 @@ function download_bezelsa() {
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
+        'thebezelproject AtariJaguar'
         'thebezelproject AtariLynx'
         'thebezelproject ColecoVision'
         'thebezelproject Dreamcast'
@@ -330,6 +333,8 @@ function download_bezelsa() {
         'thebezelproject GameGear'
         'thebezelproject GCEVectrex'
         'thebezelproject Intellivision'
+        'thebezelproject MasterSystem'
+        'thebezelproject NES'
     )
     while true; do
         local theme
@@ -427,6 +432,7 @@ clear
             30 "PC Engine-CD" \
             31 "Atari Lynx" \
             32 "Intellivision" \
+            33 "AtariJaguar" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -462,6 +468,7 @@ clear
             30) hide_bezel pce-cd ;;
             31) hide_bezel atarilynx ;;
             32) hide_bezel intellivision ;;
+            32) hide_bezel atarijaguar ;;
             *)  break ;;
         esac
     done
@@ -507,6 +514,7 @@ clear
             30 "PC Engine-CD" \
             31 "Atari Lynx" \
             32 "Intellivision" \
+            33 "Atari Jaguar" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -542,6 +550,7 @@ clear
             30) show_bezel pce-cd ;;
             31) show_bezel atarilynx ;;
             32) show_bezel intellivision ;;
+            32) show_bezel atarijaguar ;;
             *)  break ;;
         esac
     done
@@ -696,6 +705,21 @@ atari7800)
     cp /opt/retropie/configs/atari7800/retroarch.cfg /opt/retropie/configs/atari7800/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Atari-7800.cfg"' /opt/retropie/configs/atari7800/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/atari7800/retroarch.cfg
+  fi
+  ;;
+atarijaguar)
+  ifexist=`cat /opt/retropie/configs/atarijaguar/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/atarijaguar/retroarch.cfg /opt/retropie/configs/atarijaguar/retroarch.cfg.bkp
+    cat /opt/retropie/configs/atarijaguar/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/atarijaguar/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Atari-Jaguar.cfg"' /opt/retropie/configs/atarijaguar/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/atarijaguar/retroarch.cfg
+  else
+    cp /opt/retropie/configs/atarijaguar/retroarch.cfg /opt/retropie/configs/atarijaguar/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Atari-Jaguar.cfg"' /opt/retropie/configs/atarijaguar/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/atarijaguar/retroarch.cfg
   fi
   ;;
 atomiswave)
