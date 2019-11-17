@@ -188,6 +188,7 @@ hide_bezel pce-cd
 hide_bezel atarilynx
 hide_bezel intellivision
 hide_bezel atarijaguar
+hide_bezel virtualboy
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -336,6 +337,7 @@ function download_bezelsa() {
         'thebezelproject MasterSystem'
         'thebezelproject N64'
         'thebezelproject NES'
+        'thebezelproject Virtualboy'
     )
     while true; do
         local theme
@@ -434,6 +436,7 @@ clear
             31 "Atari Lynx" \
             32 "Intellivision" \
             33 "AtariJaguar" \
+            34 "Virtualboy" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -469,7 +472,8 @@ clear
             30) hide_bezel pce-cd ;;
             31) hide_bezel atarilynx ;;
             32) hide_bezel intellivision ;;
-            32) hide_bezel atarijaguar ;;
+            33) hide_bezel atarijaguar ;;
+            34) hide_bezel virtualboy ;;
             *)  break ;;
         esac
     done
@@ -516,6 +520,7 @@ clear
             31 "Atari Lynx" \
             32 "Intellivision" \
             33 "Atari Jaguar" \
+            34 "Virtualboy" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -551,7 +556,8 @@ clear
             30) show_bezel pce-cd ;;
             31) show_bezel atarilynx ;;
             32) show_bezel intellivision ;;
-            32) show_bezel atarijaguar ;;
+            33) show_bezel atarijaguar ;;
+            34) show_bezel virtualboy ;;
             *)  break ;;
         esac
     done
