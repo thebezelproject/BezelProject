@@ -335,6 +335,7 @@ function download_bezelsa() {
         'thebezelproject GCEVectrex'
         'thebezelproject Intellivision'
         'thebezelproject MasterSystem'
+        'thebezelproject MegaDrive'
         'thebezelproject N64'
         'thebezelproject NES'
         'thebezelproject Virtualboy'
