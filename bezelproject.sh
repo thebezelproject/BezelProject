@@ -339,9 +339,9 @@ function download_bezelsa() {
         'thebezelproject N64'
         'thebezelproject NES'
         'thebezelproject Virtualboy'
-        'thebezelprojecta Atomiswave'
-        'thebezelprojecta PCEngine'
-        'thebezelprojecta PCE-CD'
+        'thebezelproject Atomiswave'
+        'thebezelproject PCEngine'
+        'thebezelproject PCE-CD'
     )
     while true; do
         local theme
