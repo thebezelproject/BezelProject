@@ -230,6 +230,8 @@ function download_bezel() {
         'thebezelproject PCE-CD'
         'thebezelproject AtariLynx'
         'thebezelproject AtariJaguar'
+        'thebezelproject NGP'
+        'thebezelproject NGPC'
     )
     while true; do
         local theme
@@ -336,6 +338,7 @@ function download_bezelsa() {
         'thebezelproject GameGear'
         'thebezelproject GCEVectrex'
         'thebezelproject Intellivision'
+        'thebezelproject MAME'
         'thebezelproject MasterSystem'
         'thebezelproject MegaDrive'
         'thebezelproject N64'
@@ -347,6 +350,9 @@ function download_bezelsa() {
         'thebezelproject PSX'
         'thebezelproject NGP'
         'thebezelproject NGPC'
+        'thebezelproject SFC'
+        'thebezelproject SG-1000'
+        'thebezelproject SNES'
     )
     while true; do
         local theme
