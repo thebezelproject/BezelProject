@@ -353,6 +353,7 @@ function download_bezelsa() {
         'thebezelproject SFC'
         'thebezelproject SG-1000'
         'thebezelproject SNES'
+        'thebezelproject Sega32X'
     )
     while true; do
         local theme
