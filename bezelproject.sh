@@ -173,6 +173,7 @@ hide_bezel psx
 hide_bezel tg16
 hide_bezel tg-cd
 hide_bezel atari2600
+hide_bezel saturn
 hide_bezel coleco
 hide_bezel n64
 hide_bezel sfc
@@ -191,6 +192,7 @@ hide_bezel atarijaguar
 hide_bezel virtualboy
 hide_bezel ngp
 hide_bezel ngpc
+hide_bezel saturn
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -232,6 +234,7 @@ function download_bezel() {
         'thebezelproject AtariJaguar'
         'thebezelproject NGP'
         'thebezelproject NGPC'
+        'thebezelproject Saturn'
     )
     while true; do
         local theme
@@ -354,6 +357,7 @@ function download_bezelsa() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject Sega32X'
+        'thebezelproject Saturn'
     )
     while true; do
         local theme
@@ -455,6 +459,7 @@ clear
             34 "Virtualboy" \
             35 "NGP" \
             36 "NGPC" \
+            37 "Saturn" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -494,6 +499,7 @@ clear
             34) hide_bezel virtualboy ;;
             35) hide_bezel ngp ;;
             36) hide_bezel ngpc ;;
+            37) hide_bezel saturn ;;
             *)  break ;;
         esac
     done
@@ -543,6 +549,7 @@ clear
             34 "Virtualboy" \
             35 "NGP" \
             36 "NGPC" \
+            37 "Saturn" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -582,6 +589,7 @@ clear
             34) show_bezel virtualboy ;;
             35) show_bezel ngp ;;
             36) show_bezel ngpc ;;
+            37) show_bezel saturn ;;
             *)  break ;;
         esac
     done
@@ -997,6 +1005,21 @@ psx)
     cp /opt/retropie/configs/psx/retroarch.cfg /opt/retropie/configs/psx/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sony-PlayStation.cfg"' /opt/retropie/configs/psx/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/psx/retroarch.cfg
+  fi
+  ;;
+saturn)
+  ifexist=`cat /opt/retropie/configs/saturn/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/saturn/retroarch.cfg /opt/retropie/configs/saturn/retroarch.cfg.bkp
+    cat /opt/retropie/configs/saturn/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/saturn/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sega-Saturn.cfg"' /opt/retropie/configs/saturn/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/saturn/retroarch.cfg
+  else
+    cp /opt/retropie/configs/saturn/retroarch.cfg /opt/retropie/configs/saturn/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sega-Saturn.cfg"' /opt/retropie/configs/saturn/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/saturn/retroarch.cfg
   fi
   ;;
 sega32x)
