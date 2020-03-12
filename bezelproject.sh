@@ -193,6 +193,20 @@ hide_bezel virtualboy
 hide_bezel ngp
 hide_bezel ngpc
 hide_bezel saturn
+hide_bezel c64
+hide_bezel amstradcpc
+hide_bezel atari800
+hide_bezel atarist
+hide_bezel famicom
+hide_bezel fds
+hide_bezel msx
+hide_bezel msx2
+hide_bezel videopac
+hide_bezel wonderswan
+hide_bezel wonderswancolor
+hide_bezel x68000
+hide_bezel zx81
+hide_bezel zxspectrum
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
@@ -235,6 +249,7 @@ function download_bezel() {
         'thebezelproject NGP'
         'thebezelproject NGPC'
         'thebezelproject Saturn'
+        'thebezelproject Commodore64'
     )
     while true; do
         local theme
@@ -326,15 +341,19 @@ function install_bezel_packsa() {
 
 function download_bezelsa() {
     local themes=(
-        'thebezelproject C64'
+        'thebezelproject AmstradCPC'
+        'thebezelproject Atari800'
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
         'thebezelproject AtariJaguar'
         'thebezelproject AtariLynx'
+        'thebezelproject AtariST'
         'thebezelproject ColecoVision'
+        'thebezelproject Commodore64'
         'thebezelproject Dreamcast'
         'thebezelproject Famicom'
+        'thebezelproject FDS'
         'thebezelproject GB'
         'thebezelproject GBC'
         'thebezelproject GBA'
@@ -344,6 +363,8 @@ function download_bezelsa() {
         'thebezelproject MAME'
         'thebezelproject MasterSystem'
         'thebezelproject MegaDrive'
+        'thebezelproject MSX'
+        'thebezelproject MSX2'
         'thebezelproject N64'
         'thebezelproject NES'
         'thebezelproject Virtualboy'
@@ -358,6 +379,16 @@ function download_bezelsa() {
         'thebezelproject SNES'
         'thebezelproject Sega32X'
         'thebezelproject Saturn'
+        'thebezelproject SegaCD'
+        'thebezelproject SuperGrafx'
+        'thebezelproject TG16'
+        'thebezelproject TG-CD'
+        'thebezelproject Videopac'
+        'thebezelproject WonderSwan'
+        'thebezelproject WonderSwanColor'
+        'thebezelproject X68000'
+        'thebezelproject ZX81'
+        'thebezelproject ZXSpectrum'
     )
     while true; do
         local theme
@@ -460,6 +491,20 @@ clear
             35 "NGP" \
             36 "NGPC" \
             37 "Saturn" \
+			38 "C64" \
+			39 "AmstradCPC" \
+			40 "Atari 800" \
+			41 "Atari ST" \
+			42 "Famicom" \
+			43 "Famicom Disk System" \
+			44 "MSX" \
+			45 "MSX2" \
+			46 "Videopac - Odyssey 2" \
+			47 "WonderSwan" \
+			48 "WonderSwan Color" \
+			49 "ZX81" \
+			50 "ZX Spectrum" \
+			51 "Sharp X68000" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -500,6 +545,20 @@ clear
             35) hide_bezel ngp ;;
             36) hide_bezel ngpc ;;
             37) hide_bezel saturn ;;
+			38) hide_bezel c64 ;;
+			39) hide_bezel amstradcpc ;;
+			40) hide_bezel atari800 ;;
+			41) hide_bezel atarist ;;
+			42) hide_bezel famicom ;;
+			43) hide_bezel fds ;;
+			44) hide_bezel msx ;;
+			45) hide_bezel msx2 ;;
+			46) hide_bezel videopac ;;
+			47) hide_bezel wonderswan ;;
+			48) hide_bezel wonderswancolor ;;
+			49) hide_bezel zx81 ;;
+			50) hide_bezel zxspectrum ;;
+			51) hide_bezel x68000 ;;
             *)  break ;;
         esac
     done
@@ -550,6 +609,20 @@ clear
             35 "NGP" \
             36 "NGPC" \
             37 "Saturn" \
+			38 "C64" \
+			39 "AmstradCPC" \
+			40 "Atari 800" \
+			41 "Atari ST" \
+			42 "Famicom" \
+			43 "Famicom Disk System" \
+			44 "MSX" \
+			45 "MSX2" \
+			46 "Videopac - Odyssey 2" \
+			47 "WonderSwan" \
+			48 "WonderSwan Color" \
+			49 "ZX81" \
+			50 "ZX Spectrum" \
+			51 "Sharp X68000" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -590,6 +663,20 @@ clear
             35) show_bezel ngp ;;
             36) show_bezel ngpc ;;
             37) show_bezel saturn ;;
+			38) show_bezel c64 ;;
+			39) show_bezel amstradcpc ;;
+			40) show_bezel atari800 ;;
+			41) show_bezel atarist ;;
+			42) show_bezel famicom ;;
+			43) show_bezel fds ;;
+			44) show_bezel msx ;;
+			45) show_bezel msx2 ;;
+			46) show_bezel videopac ;;
+			47) show_bezel wonderswan ;;
+			48) show_bezel wonderswancolor ;;
+			49) show_bezel zx81 ;;
+			50) show_bezel zxspectrum ;;
+			51) show_bezel x68000 ;;
             *)  break ;;
         esac
     done
@@ -1457,6 +1544,21 @@ x68000)
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/x68000/retroarch.cfg
   fi
   ;;
+zx81)
+  ifexist=`cat /opt/retropie/configs/zx81/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/zx81/retroarch.cfg /opt/retropie/configs/zx81/retroarch.cfg.bkp
+    cat /opt/retropie/configs/zx81/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/zx81/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sinclair-ZX-Spectrum.cfg"' /opt/retropie/configs/zx81/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/zx81/retroarch.cfg
+  else
+    cp /opt/retropie/configs/zx81/retroarch.cfg /opt/retropie/configs/zx81/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sinclair-ZX-Spectrum.cfg"' /opt/retropie/configs/zx81/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/zx81/retroarch.cfg
+  fi
+  ;;
 zxspectrum)
   ifexist=`cat /opt/retropie/configs/zxspectrum/retroarch.cfg |grep "input_overlay" |wc -l`
   if [[ ${ifexist} > 0 ]]
@@ -1514,12 +1616,22 @@ echo "" >> /tmp/bezelprojectinfo.txt
 echo "" >> /tmp/bezelprojectinfo.txt
 
 echo "System                                          Retroarch Emulator" >> /tmp/bezelprojectinfo.txt
+echo "Amstrad CPC                                     lr-caprice32" >> /tmp/bezelprojectinfo.txt
+echo "Atari 800                                       lr-atari800" >> /tmp/bezelprojectinfo.txt
 echo "Atari 2600                                      lr-stella" >> /tmp/bezelprojectinfo.txt
 echo "Atari 5200                                      lr-atari800" >> /tmp/bezelprojectinfo.txt
 echo "Atari 7800                                      lr-prosystem" >> /tmp/bezelprojectinfo.txt
+echo "Atari Jaguar                                    lr-virtualjaguar" >> /tmp/bezelprojectinfo.txt
+echo "Atari Lynx                                      lr-handy, lr-beetle-lynx" >> /tmp/bezelprojectinfo.txt
+echo "Atari ST                                        lr-hatari" >> /tmp/bezelprojectinfo.txt
+echo "Bandai WonderSwan                               lr-beetle-wswan" >> /tmp/bezelprojectinfo.txt
+echo "Bandai WonderSwan Color                         lr-beetle-wswan" >> /tmp/bezelprojectinfo.txt
 echo "ColecoVision                                    lr-bluemsx" >> /tmp/bezelprojectinfo.txt
 echo "GCE Vectrex                                     lr-vecx" >> /tmp/bezelprojectinfo.txt
 echo "MAME                                            lr-various" >> /tmp/bezelprojectinfo.txt
+echo "Mattel Intellivision                            lr-freeintv" >> /tmp/bezelprojectinfo.txt
+echo "MSX                                             lr-fmsx, lr-bluemsx" >> /tmp/bezelprojectinfo.txt
+echo "MSX2                                            lr-fmsx, lr-bluemsx" >> /tmp/bezelprojectinfo.txt
 echo "NEC PC Engine CD                                lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
 echo "NEC PC Engine                                   lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
 echo "NEC SuperGrafx                                  lr-beetle-supergrafx" >> /tmp/bezelprojectinfo.txt
@@ -1533,16 +1645,25 @@ echo "Nintendo Game Boy                               lr-gambatte" >> /tmp/bezel
 echo "Nintendo Game Boy Color                         lr-gambatte" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Game Boy Advance                       lr-mgba" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Super Famicom                          lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Virtual Boy                            lr-beetle-vb" >> /tmp/bezelprojectinfo.txt
+echo "Philips Videopac G7000 - Magnavox Odyssey2      lr-lr-o2em" >> /tmp/bezelprojectinfo.txt
 echo "Sammy Atomiswave                                lr-flycast" >> /tmp/bezelprojectinfo.txt
 echo "Sega 32X                                        lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega CD                                         lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Dreamcast                                  lr-flycast" >> /tmp/bezelprojectinfo.txt
+echo "Sega Game Gear                                  lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Genesis                                    lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Master System                              lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Mega Drive                                 lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Mega Drive Japan                           lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Naomi                                      lr-flycast" >> /tmp/bezelprojectinfo.txt
 echo "Sega SG-1000                                    lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
+echo "Sega Saturn                                     lr-yabause, lr-beetle-saturn" >> /tmp/bezelprojectinfo.txt
+echo "Sharp X68000                                    lr-px68k" >> /tmp/bezelprojectinfo.txt
+echo "Sinclair ZX-81                                  lr-81" >> /tmp/bezelprojectinfo.txt
+echo "Sinclair ZX Spectrum                            lr-fuse" >> /tmp/bezelprojectinfo.txt
+echo "SNK Neo Geo Pocket                              lr-beetle-ngp" >> /tmp/bezelprojectinfo.txt
+echo "SNK Neo Geo Pocket Color                        lr-beetle-ngp" >> /tmp/bezelprojectinfo.txt
 echo "Sony PlayStation                                lr-pcsx-rearmed" >> /tmp/bezelprojectinfo.txt
 echo "Super Nintendo Entertainment System             lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
 echo "" >> /tmp/bezelprojectinfo.txt
