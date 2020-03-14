@@ -249,7 +249,7 @@ function download_bezel() {
         'thebezelproject NGP'
         'thebezelproject NGPC'
         'thebezelproject Saturn'
-        'thebezelproject Commodore64'
+        'thebezelproject C64'
     )
     while true; do
         local theme
@@ -350,7 +350,7 @@ function download_bezelsa() {
         'thebezelproject AtariLynx'
         'thebezelproject AtariST'
         'thebezelproject ColecoVision'
-        'thebezelproject Commodore64'
+        'thebezelproject C64'
         'thebezelproject Dreamcast'
         'thebezelproject Famicom'
         'thebezelproject FDS'
