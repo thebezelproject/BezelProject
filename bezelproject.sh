@@ -250,6 +250,8 @@ function download_bezel() {
         'thebezelproject NGPC'
         'thebezelproject Saturn'
         'thebezelproject C64'
+        'thebezelproject MSX'
+        'thebezelproject MSX2'
     )
     while true; do
         local theme
