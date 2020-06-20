@@ -124,7 +124,7 @@ function install_bezel_pack() {
 
     if [[ "${atheme}" == "mame" ]];then
       mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha" 2> /dev/null
-      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus" 2> /dev/null
       mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)" 2> /dev/null
       mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010" 2> /dev/null
     fi
@@ -323,7 +323,7 @@ function install_bezel_packsa() {
 
     if [[ "${atheme}" == "mame" ]];then
       mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha" 2> /dev/null
-      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003" 2> /dev/null
+      mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus" 2> /dev/null
       mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)" 2> /dev/null
       mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010" 2> /dev/null
     fi
@@ -696,7 +696,7 @@ arcade)
   cat /opt/retropie/configs/${emulator}/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
   cp /tmp/retroarch.cfg /opt/retropie/configs/${emulator}/retroarch.cfg
   mv "/opt/retropie/configs/all/retroarch/config/FB Alpha" "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha"
-  mv "/opt/retropie/configs/all/retroarch/config/MAME 2003" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003"
+  mv "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus"
   mv "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)"
   mv "/opt/retropie/configs/all/retroarch/config/MAME 2010" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010"
   ;;
@@ -710,7 +710,7 @@ mame-libretro)
   cp /opt/retropie/configs/${emulator}/retroarch.cfg /opt/retropie/configs/${emulator}/retroarch.cfg.bkp
   cat /opt/retropie/configs/${emulator}/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
   cp /tmp/retroarch.cfg /opt/retropie/configs/${emulator}/retroarch.cfg
-  mv "/opt/retropie/configs/all/retroarch/config/MAME 2003" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003"
+  mv "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus"
   mv "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)"
   mv "/opt/retropie/configs/all/retroarch/config/MAME 2010" "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010"
   ;;
@@ -739,7 +739,7 @@ arcade)
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/MAME-Horizontal.cfg"' /opt/retropie/configs/arcade/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/arcade/retroarch.cfg
     mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha"
-    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003"
+    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
   else
@@ -747,7 +747,7 @@ arcade)
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/MAME-Horizontal.cfg"' /opt/retropie/configs/arcade/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/arcade/retroarch.cfg
     mv "/opt/retropie/configs/all/retroarch/config/disable_FB Alpha" "/opt/retropie/configs/all/retroarch/config/FB Alpha"
-    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003"
+    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
   fi
@@ -778,14 +778,14 @@ mame-libretro)
     cp /tmp/retroarch.cfg /opt/retropie/configs/mame-libretro/retroarch.cfg
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/MAME-Horizontal.cfg"' /opt/retropie/configs/mame-libretro/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/mame-libretro/retroarch.cfg
-    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003"
+    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
   else
     cp /opt/retropie/configs/mame-libretro/retroarch.cfg /opt/retropie/configs/mame-libretro/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/MAME-Horizontal.cfg"' /opt/retropie/configs/mame-libretro/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/mame-libretro/retroarch.cfg
-    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003" "/opt/retropie/configs/all/retroarch/config/MAME 2003"
+    mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003-Plus" "/opt/retropie/configs/all/retroarch/config/MAME 2003-Plus"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2003 (0.78)" "/opt/retropie/configs/all/retroarch/config/MAME 2003 (0.78)"
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
   fi
