@@ -155,53 +155,54 @@ function uninstall_bezel_pack() {
 }
 
 function removebezelproject() {
-hide_bezel vectrex
-hide_bezel supergrafx
-hide_bezel sega32x
-hide_bezel sg-1000
+hide_bezel amstradcpc
 hide_bezel arcade
-hide_bezel fba
-hide_bezel mame-libretro
-hide_bezel nes
-hide_bezel mastersystem
+hide_bezel atari2600
 hide_bezel atari5200
 hide_bezel atari7800
-hide_bezel snes
-hide_bezel megadrive
-hide_bezel segacd
-hide_bezel psx
-hide_bezel tg16
-hide_bezel tg-cd
-hide_bezel atari2600
-hide_bezel saturn
-hide_bezel coleco
-hide_bezel n64
-hide_bezel sfc
-hide_bezel gb
-hide_bezel gbc
-hide_bezel gba
-hide_bezel dreamcast
-hide_bezel naomi
-hide_bezel atomiswave
-hide_bezel gamegear
-hide_bezel pcengine
-hide_bezel pce-cd
-hide_bezel atarilynx
-hide_bezel intellivision
-hide_bezel atarijaguar
-hide_bezel virtualboy
-hide_bezel ngp
-hide_bezel ngpc
-hide_bezel saturn
-hide_bezel c64
-hide_bezel amstradcpc
 hide_bezel atari800
+hide_bezel atarijaguar
+hide_bezel atarilynx
 hide_bezel atarist
+hide_bezel atomiswave
+hide_bezel c64
+hide_bezel coleco
+hide_bezel dreamcast
 hide_bezel famicom
+hide_bezel fba
 hide_bezel fds
+hide_bezel gamegear
+hide_bezel gb
+hide_bezel gba
+hide_bezel gbc
+hide_bezel intellivision
+hide_bezel mame-libretro
+hide_bezel mastersystem
+hide_bezel megadrive
 hide_bezel msx
 hide_bezel msx2
+hide_bezel n64
+hide_bezel naomi
+hide_bezel nes
+hide_bezel ngp
+hide_bezel ngpc
+hide_bezel pce-cd
+hide_bezel pcengine
+hide_bezel pico
+hide_bezel psx
+hide_bezel saturn
+hide_bezel saturn
+hide_bezel sega32x
+hide_bezel segacd
+hide_bezel sfc
+hide_bezel sg-1000
+hide_bezel snes
+hide_bezel supergrafx
+hide_bezel tg-cd
+hide_bezel tg16
+hide_bezel vectrex
 hide_bezel videopac
+hide_bezel virtualboy
 hide_bezel wonderswan
 hide_bezel wonderswancolor
 hide_bezel x68000
@@ -216,42 +217,42 @@ rm /home/pi/RetroPie/retropiemenu/bezelproject.sh
 
 function download_bezel() {
     local themes=(
-        'thebezelproject MAME'
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
+        'thebezelproject AtariJaguar'
+        'thebezelproject AtariLynx'
+        'thebezelproject Atomiswave'
+        'thebezelproject C64'
+        'thebezelproject ColecoVision'
+        'thebezelproject Dreamcast'
         'thebezelproject GB'
         'thebezelproject GBA'
         'thebezelproject GBC'
         'thebezelproject GCEVectrex'
+        'thebezelproject GameGear'
+        'thebezelproject MAME'
+        'thebezelproject MSX'
+        'thebezelproject MSX2'
         'thebezelproject MasterSystem'
         'thebezelproject MegaDrive'
         'thebezelproject N64'
         'thebezelproject NES'
-        'thebezelproject Sega32X'
-        'thebezelproject SegaCD'
-        'thebezelproject SG-1000'
-        'thebezelproject SNES'
-        'thebezelproject SuperGrafx'
-        'thebezelproject SFC'
-        'thebezelproject PSX'
-        'thebezelproject TG16'
-        'thebezelproject TG-CD'
-        'thebezelproject ColecoVision'
-        'thebezelproject Dreamcast'
-        'thebezelproject Naomi'
-        'thebezelproject Atomiswave'
-        'thebezelproject GameGear'
-        'thebezelproject PCEngine'
-        'thebezelproject PCE-CD'
-        'thebezelproject AtariLynx'
-        'thebezelproject AtariJaguar'
         'thebezelproject NGP'
         'thebezelproject NGPC'
+        'thebezelproject Naomi'
+        'thebezelproject PCE-CD'
+        'thebezelproject PCEngine'
+        'thebezelproject PSX'
+        'thebezelproject SFC'
+        'thebezelproject SG-1000'
+        'thebezelproject SNES'
         'thebezelproject Saturn'
-        'thebezelproject C64'
-        'thebezelproject MSX'
-        'thebezelproject MSX2'
+        'thebezelproject Sega32X'
+        'thebezelproject SegaCD'
+        'thebezelproject SuperGrafx'
+        'thebezelproject TG-CD'
+        'thebezelproject TG16'
     )
     while true; do
         local theme
@@ -344,48 +345,49 @@ function install_bezel_packsa() {
 function download_bezelsa() {
     local themes=(
         'thebezelproject AmstradCPC'
-        'thebezelproject Atari800'
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
+        'thebezelproject Atari800'
         'thebezelproject AtariJaguar'
         'thebezelproject AtariLynx'
         'thebezelproject AtariST'
-        'thebezelproject ColecoVision'
+        'thebezelproject Atomiswave'
         'thebezelproject C64'
+        'thebezelproject ColecoVision'
         'thebezelproject Dreamcast'
-        'thebezelproject Famicom'
         'thebezelproject FDS'
+        'thebezelproject Famicom'
         'thebezelproject GB'
-        'thebezelproject GBC'
         'thebezelproject GBA'
-        'thebezelproject GameGear'
+        'thebezelproject GBC'
         'thebezelproject GCEVectrex'
+        'thebezelproject GameGear'
         'thebezelproject Intellivision'
         'thebezelproject MAME'
-        'thebezelproject MasterSystem'
-        'thebezelproject MegaDrive'
         'thebezelproject MSX'
         'thebezelproject MSX2'
+        'thebezelproject MasterSystem'
+        'thebezelproject MegaDrive'
         'thebezelproject N64'
         'thebezelproject NES'
-        'thebezelproject Virtualboy'
-        'thebezelproject Atomiswave'
-        'thebezelproject PCEngine'
-        'thebezelproject PCE-CD'
-        'thebezelproject PSX'
         'thebezelproject NGP'
         'thebezelproject NGPC'
+        'thebezelproject PCE-CD'
+        'thebezelproject PCEngine'
+        'thebezelproject PSX'
+        'thebezelproject Pico'
         'thebezelproject SFC'
         'thebezelproject SG-1000'
         'thebezelproject SNES'
-        'thebezelproject Sega32X'
         'thebezelproject Saturn'
+        'thebezelproject Sega32X'
         'thebezelproject SegaCD'
         'thebezelproject SuperGrafx'
-        'thebezelproject TG16'
         'thebezelproject TG-CD'
+        'thebezelproject TG16'
         'thebezelproject Videopac'
+        'thebezelproject Virtualboy'
         'thebezelproject WonderSwan'
         'thebezelproject WonderSwanColor'
         'thebezelproject X68000'
@@ -456,111 +458,113 @@ clear
         choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
             --ok-label OK --cancel-label Exit \
             --menu "Which system would you like to disable bezels for?" 25 75 20 \
-            1 "GCEVectrex" \
-            2 "SuperGrafx" \
-            3 "Sega32X" \
-            4 "SG-1000" \
-            5 "Arcade" \
-            6 "Final Burn Alpha" \
-            7 "MAME Libretro" \
-            8 "NES" \
-            9 "MasterSystem" \
-            10 "Atari 5200" \
-            11 "Atari 7800" \
-            12 "SNES" \
-            13 "MegaDrive" \
-            14 "SegaCD" \
-            15 "PSX" \
-            16 "TG16" \
-            17 "TG-CD" \
-            18 "Atari 2600" \
-            19 "ColecoVision" \
-            20 "Nintendo 64" \
-            21 "Super Famicom" \
-            22 "Game Boy" \
-            23 "Game Boy Color" \
-            24 "Game Boy Advance" \
-            25 "Sega Dreamcast" \
-            26 "Sega Naomi" \
-            27 "Sammy Atomiswave" \
-            28 "GameGear" \
-            29 "PC Engine" \
-            30 "PC Engine-CD" \
-            31 "Atari Lynx" \
-            32 "Intellivision" \
-            33 "AtariJaguar" \
-            34 "Virtualboy" \
-            35 "NGP" \
-            36 "NGPC" \
-            37 "Saturn" \
-			38 "C64" \
-			39 "AmstradCPC" \
-			40 "Atari 800" \
-			41 "Atari ST" \
-			42 "Famicom" \
-			43 "Famicom Disk System" \
-			44 "MSX" \
-			45 "MSX2" \
-			46 "Videopac - Odyssey 2" \
-			47 "WonderSwan" \
-			48 "WonderSwan Color" \
-			49 "ZX81" \
-			50 "ZX Spectrum" \
-			51 "Sharp X68000" \
+			1 "AmstradCPC" \
+			2 "Arcade" \
+			3 "Atari 2600" \
+			4 "Atari 5200" \
+			5 "Atari 7800" \
+			6 "Atari 800" \
+			7 "Atari Lynx" \
+			8 "Atari ST" \
+			9 "AtariJaguar" \
+			10 "C64" \
+			11 "ColecoVision" \
+			12 "Famicom" \
+			13 "Famicom Disk System" \
+			14 "Final Burn Alpha" \
+			15 "Game Boy" \
+			16 "Game Boy Advance" \
+			17 "Game Boy Color" \
+			18 "GameGear" \
+			19 "GCEVectrex" \
+			20 "Intellivision" \
+			21 "MAME Libretro" \
+			22 "MasterSystem" \
+			23 "MegaDrive" \
+			24 "MSX" \
+			25 "MSX2" \
+			26 "NES" \
+			27 "NGP" \
+			28 "NGPC" \
+			29 "Nintendo 64" \
+			30 "PC Engine" \
+			31 "PC Engine-CD" \
+			32 "PSX" \
+			33 "Sammy Atomiswave" \
+			34 "Saturn" \
+			35 "Sega Dreamcast" \
+			36 "Sega Naomi" \
+			37 "Sega Pico" \
+			38 "Sega32X" \
+			39 "SegaCD" \
+			40 "SG-1000" \
+			41 "Sharp X68000" \
+			42 "SNES" \
+			43 "Super Famicom" \
+			44 "SuperGrafx" \
+			45 "TG16" \
+			46 "TG-CD" \
+			47 "Videopac - Odyssey 2" \
+			48 "Virtualboy" \
+			49 "WonderSwan" \
+			50 "WonderSwan Color" \
+			51 "ZX Spectrum" \
+			52 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
-            1) hide_bezel vectrex ;;
-            2) hide_bezel supergrafx ;;
-            3) hide_bezel sega32x ;;
-            4) hide_bezel sg-1000 ;;
-            5) hide_bezel arcade ;;
-            6) hide_bezel fba ;;
-            7) hide_bezel mame-libretro ;;
-            8) hide_bezel nes ;;
-            9) hide_bezel mastersystem ;;
-            10) hide_bezel atari5200 ;;
-            11) hide_bezel atari7800 ;;
-            12) hide_bezel snes ;;
-            13) hide_bezel megadrive ;;
-            14) hide_bezel segacd ;;
-            15) hide_bezel psx ;;
-            16) hide_bezel tg16 ;;
-            17) hide_bezel tg-cd ;;
-            18) hide_bezel atari2600 ;;
-            19) hide_bezel coleco ;;
-            20) hide_bezel n64 ;;
-            21) hide_bezel sfc ;;
-            22) hide_bezel gb ;;
-            23) hide_bezel gbc ;;
-            24) hide_bezel gba ;;
-            25) hide_bezel dreamcast ;;
-            26) hide_bezel naomi ;;
-            27) hide_bezel atomiswave ;;
-            28) hide_bezel gamegear ;;
-            29) hide_bezel pcengine ;;
-            30) hide_bezel pce-cd ;;
-            31) hide_bezel atarilynx ;;
-            32) hide_bezel intellivision ;;
-            33) hide_bezel atarijaguar ;;
-            34) hide_bezel virtualboy ;;
-            35) hide_bezel ngp ;;
-            36) hide_bezel ngpc ;;
-            37) hide_bezel saturn ;;
-			38) hide_bezel c64 ;;
-			39) hide_bezel amstradcpc ;;
-			40) hide_bezel atari800 ;;
-			41) hide_bezel atarist ;;
-			42) hide_bezel famicom ;;
-			43) hide_bezel fds ;;
-			44) hide_bezel msx ;;
-			45) hide_bezel msx2 ;;
-			46) hide_bezel videopac ;;
-			47) hide_bezel wonderswan ;;
-			48) hide_bezel wonderswancolor ;;
-			49) hide_bezel zx81 ;;
-			50) hide_bezel zxspectrum ;;
-			51) hide_bezel x68000 ;;
+			1) hide_bezel amstradcpc ;;
+			2) hide_bezel arcade ;;
+			3) hide_bezel atari2600 ;;
+			4) hide_bezel atari5200 ;;
+			5) hide_bezel atari7800 ;;
+			6) hide_bezel atari800 ;;
+			7) hide_bezel atarilynx ;;
+			8) hide_bezel atarist ;;
+			9) hide_bezel atarijaguar ;;
+			10) hide_bezel c64 ;;
+			11) hide_bezel coleco ;;
+			12) hide_bezel famicom ;;
+			13) hide_bezel fds ;;
+			14) hide_bezel fba ;;
+			15) hide_bezel gb ;;
+			16) hide_bezel gba ;;
+			17) hide_bezel gbc ;;
+			18) hide_bezel gamegear ;;
+			19) hide_bezel vectrex ;;
+			20) hide_bezel intellivision ;;
+			21) hide_bezel mame-libretro ;;
+			22) hide_bezel mastersystem ;;
+			23) hide_bezel megadrive ;;
+			24) hide_bezel msx ;;
+			25) hide_bezel msx2 ;;
+			26) hide_bezel nes ;;
+			27) hide_bezel ngp ;;
+			28) hide_bezel ngpc ;;
+			29) hide_bezel n64 ;;
+			30) hide_bezel pcengine ;;
+			31) hide_bezel pce-cd ;;
+			32) hide_bezel psx ;;
+			33) hide_bezel atomiswave ;;
+			34) hide_bezel saturn ;;
+			35) hide_bezel dreamcast ;;
+			36) hide_bezel naomi ;;
+			37) hide_bezel pico ;;
+			38) hide_bezel sega32x ;;
+			39) hide_bezel segacd ;;
+			40) hide_bezel sg-1000 ;;
+			41) hide_bezel x68000 ;;
+			42) hide_bezel snes ;;
+			43) hide_bezel sfc ;;
+			44) hide_bezel supergrafx ;;
+			45) hide_bezel tg16 ;;
+			46) hide_bezel tg-cd ;;
+			47) hide_bezel videopac ;;
+			48) hide_bezel virtualboy ;;
+			49) hide_bezel wonderswan ;;
+			50) hide_bezel wonderswancolor ;;
+			51) hide_bezel zxspectrum ;;
+			52) hide_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -574,111 +578,113 @@ clear
         choice=$(dialog --backtitle "$BACKTITLE" --title " MAIN MENU " \
             --ok-label OK --cancel-label Exit \
             --menu "Which system would you like to enable bezels for?" 25 75 20 \
-            1 "GCEVectrex" \
-            2 "SuperGrafx" \
-            3 "Sega32X" \
-            4 "SG-1000" \
-            5 "Arcade" \
-            6 "Final Burn Alpha" \
-            7 "MAME Libretro" \
-            8 "NES" \
-            9 "MasterSystem" \
-            10 "Atari 5200" \
-            11 "Atari 7800" \
-            12 "SNES" \
-            13 "MegaDrive" \
-            14 "SegaCD" \
-            15 "PSX" \
-            16 "TG16" \
-            17 "TG-CD" \
-            18 "Atari 2600" \
-            19 "ColecoVision" \
-            20 "Nintendo 64" \
-            21 "Super Famicom" \
-            22 "Game Boy" \
-            23 "Game Boy Color" \
-            24 "Game Boy Advance" \
-            25 "Sega Dreamcast" \
-            26 "Sega Naomi" \
-            27 "Sammy Atomiswave" \
-            28 "GameGear" \
-            29 "PC Engine" \
-            30 "PC Engine-CD" \
-            31 "Atari Lynx" \
-            32 "Intellivision" \
-            33 "Atari Jaguar" \
-            34 "Virtualboy" \
-            35 "NGP" \
-            36 "NGPC" \
-            37 "Saturn" \
-			38 "C64" \
-			39 "AmstradCPC" \
-			40 "Atari 800" \
-			41 "Atari ST" \
-			42 "Famicom" \
-			43 "Famicom Disk System" \
-			44 "MSX" \
-			45 "MSX2" \
-			46 "Videopac - Odyssey 2" \
-			47 "WonderSwan" \
-			48 "WonderSwan Color" \
-			49 "ZX81" \
-			50 "ZX Spectrum" \
-			51 "Sharp X68000" \
+			1 "AmstradCPC" \
+			2 "Arcade" \
+			3 "Atari 2600" \
+			4 "Atari 5200" \
+			5 "Atari 7800" \
+			6 "Atari 800" \
+			7 "Atari Lynx" \
+			8 "Atari ST" \
+			9 "AtariJaguar" \
+			10 "C64" \
+			11 "ColecoVision" \
+			12 "Famicom" \
+			13 "Famicom Disk System" \
+			14 "Final Burn Alpha" \
+			15 "Game Boy" \
+			16 "Game Boy Advance" \
+			17 "Game Boy Color" \
+			18 "GameGear" \
+			19 "GCEVectrex" \
+			20 "Intellivision" \
+			21 "MAME Libretro" \
+			22 "MasterSystem" \
+			23 "MegaDrive" \
+			24 "MSX" \
+			25 "MSX2" \
+			26 "NES" \
+			27 "NGP" \
+			28 "NGPC" \
+			29 "Nintendo 64" \
+			30 "PC Engine" \
+			31 "PC Engine-CD" \
+			32 "PSX" \
+			33 "Sammy Atomiswave" \
+			34 "Saturn" \
+			35 "Sega Dreamcast" \
+			36 "Sega Naomi" \
+			37 "Sega Pico" \
+			38 "Sega32X" \
+			39 "SegaCD" \
+			40 "SG-1000" \
+			41 "Sharp X68000" \
+			42 "SNES" \
+			43 "Super Famicom" \
+			44 "SuperGrafx" \
+			45 "TG16" \
+			46 "TG-CD" \
+			47 "Videopac - Odyssey 2" \
+			48 "Virtualboy" \
+			49 "WonderSwan" \
+			50 "WonderSwan Color" \
+			51 "ZX Spectrum" \
+			52 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
-            1) show_bezel gcevectrex ;;
-            2) show_bezel supergrafx ;;
-            3) show_bezel sega32x ;;
-            4) show_bezel sg-1000 ;;
-            5) show_bezel arcade ;;
-            6) show_bezel fba ;;
-            7) show_bezel mame-libretro ;;
-            8) show_bezel nes ;;
-            9) show_bezel mastersystem ;;
-            10) show_bezel atari5200 ;;
-            11) show_bezel atari7800 ;;
-            12) show_bezel snes ;;
-            13) show_bezel megadrive ;;
-            14) show_bezel segacd ;;
-            15) show_bezel psx ;;
-            16) show_bezel tg16 ;;
-            17) show_bezel tg-cd ;;
-            18) show_bezel atari2600 ;;
-            19) show_bezel coleco ;;
-            20) show_bezel n64 ;;
-            21) show_bezel sfc ;;
-            22) show_bezel gb ;;
-            23) show_bezel gbc ;;
-            24) show_bezel gba ;;
-            25) show_bezel dreamcast ;;
-            26) show_bezel naomi ;;
-            27) show_bezel atomiswave ;;
-            28) show_bezel gamegear ;;
-            29) show_bezel pcengine ;;
-            30) show_bezel pce-cd ;;
-            31) show_bezel atarilynx ;;
-            32) show_bezel intellivision ;;
-            33) show_bezel atarijaguar ;;
-            34) show_bezel virtualboy ;;
-            35) show_bezel ngp ;;
-            36) show_bezel ngpc ;;
-            37) show_bezel saturn ;;
-			38) show_bezel c64 ;;
-			39) show_bezel amstradcpc ;;
-			40) show_bezel atari800 ;;
-			41) show_bezel atarist ;;
-			42) show_bezel famicom ;;
-			43) show_bezel fds ;;
-			44) show_bezel msx ;;
-			45) show_bezel msx2 ;;
-			46) show_bezel videopac ;;
-			47) show_bezel wonderswan ;;
-			48) show_bezel wonderswancolor ;;
-			49) show_bezel zx81 ;;
-			50) show_bezel zxspectrum ;;
-			51) show_bezel x68000 ;;
+			1) show_bezel amstradcpc ;;
+			2) show_bezel arcade ;;
+			3) show_bezel atari2600 ;;
+			4) show_bezel atari5200 ;;
+			5) show_bezel atari7800 ;;
+			6) show_bezel atari800 ;;
+			7) show_bezel atarilynx ;;
+			8) show_bezel atarist ;;
+			9) show_bezel atarijaguar ;;
+			10) show_bezel c64 ;;
+			11) show_bezel coleco ;;
+			12) show_bezel famicom ;;
+			13) show_bezel fds ;;
+			14) show_bezel fba ;;
+			15) show_bezel gb ;;
+			16) show_bezel gba ;;
+			17) show_bezel gbc ;;
+			18) show_bezel gamegear ;;
+			19) show_bezel vectrex ;;
+			20) show_bezel intellivision ;;
+			21) show_bezel mame-libretro ;;
+			22) show_bezel mastersystem ;;
+			23) show_bezel megadrive ;;
+			24) show_bezel msx ;;
+			25) show_bezel msx2 ;;
+			26) show_bezel nes ;;
+			27) show_bezel ngp ;;
+			28) show_bezel ngpc ;;
+			29) show_bezel n64 ;;
+			30) show_bezel pcengine ;;
+			31) show_bezel pce-cd ;;
+			32) show_bezel psx ;;
+			33) show_bezel atomiswave ;;
+			34) show_bezel saturn ;;
+			35) show_bezel dreamcast ;;
+			36) show_bezel naomi ;;
+			37) show_bezel pico ;;
+			38) show_bezel sega32x ;;
+			39) show_bezel segacd ;;
+			40) show_bezel sg-1000 ;;
+			41) show_bezel x68000 ;;
+			42) show_bezel snes ;;
+			43) show_bezel sfc ;;
+			44) show_bezel supergrafx ;;
+			45) show_bezel tg16 ;;
+			46) show_bezel tg-cd ;;
+			47) show_bezel videopac ;;
+			48) show_bezel virtualboy ;;
+			49) show_bezel wonderswan ;;
+			50) show_bezel wonderswancolor ;;
+			51) show_bezel zxspectrum ;;
+			52) show_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -1079,6 +1085,21 @@ pcengine)
     cp /opt/retropie/configs/pcengine/retroarch.cfg /opt/retropie/configs/pcengine/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/NEC-PC-Engine.cfg"' /opt/retropie/configs/pcengine/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/pcengine/retroarch.cfg
+  fi
+  ;;
+pico)
+  ifexist=`cat /opt/retropie/configs/pico/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/pico/retroarch.cfg /opt/retropie/configs/pico/retroarch.cfg.bkp
+    cat /opt/retropie/configs/pico/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/pico/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sega-Mega-Drive.cfg"' /opt/retropie/configs/pico/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/pico/retroarch.cfg
+  else
+    cp /opt/retropie/configs/pico/retroarch.cfg /opt/retropie/configs/pico/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sega-Pico.cfg"' /opt/retropie/configs/pico/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/pico/retroarch.cfg
   fi
   ;;
 psx)
@@ -1659,6 +1680,7 @@ echo "Sega Master System                              lr-picodrive, lr-genesis-p
 echo "Sega Mega Drive                                 lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Mega Drive Japan                           lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Naomi                                      lr-flycast" >> /tmp/bezelprojectinfo.txt
+echo "Sega Pico		                                  lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega SG-1000                                    lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
 echo "Sega Saturn                                     lr-yabause, lr-beetle-saturn" >> /tmp/bezelprojectinfo.txt
 echo "Sharp X68000                                    lr-px68k" >> /tmp/bezelprojectinfo.txt
