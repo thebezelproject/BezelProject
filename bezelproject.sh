@@ -183,6 +183,7 @@ hide_bezel msx
 hide_bezel msx2
 hide_bezel n64
 hide_bezel naomi
+hide_bezel nds
 hide_bezel nes
 hide_bezel ngp
 hide_bezel ngpc
@@ -237,6 +238,7 @@ function download_bezel() {
         'thebezelproject MasterSystem'
         'thebezelproject MegaDrive'
         'thebezelproject N64'
+        'thebezelproject NDS'
         'thebezelproject NES'
         'thebezelproject NGP'
         'thebezelproject NGPC'
@@ -370,6 +372,7 @@ function download_bezelsa() {
         'thebezelproject MasterSystem'
         'thebezelproject MegaDrive'
         'thebezelproject N64'
+        'thebezelproject NDS'
         'thebezelproject NES'
         'thebezelproject NGP'
         'thebezelproject NGPC'
@@ -487,29 +490,30 @@ clear
 			27 "NGP" \
 			28 "NGPC" \
 			29 "Nintendo 64" \
-			30 "PC Engine" \
-			31 "PC Engine-CD" \
-			32 "PSX" \
-			33 "Sammy Atomiswave" \
-			34 "Saturn" \
-			35 "Sega Dreamcast" \
-			36 "Sega Naomi" \
-			37 "Sega Pico" \
-			38 "Sega32X" \
-			39 "SegaCD" \
-			40 "SG-1000" \
-			41 "Sharp X68000" \
-			42 "SNES" \
-			43 "Super Famicom" \
-			44 "SuperGrafx" \
-			45 "TG16" \
-			46 "TG-CD" \
-			47 "Videopac - Odyssey 2" \
-			48 "Virtualboy" \
-			49 "WonderSwan" \
-			50 "WonderSwan Color" \
-			51 "ZX Spectrum" \
-			52 "ZX81" \
+			30 "Nintendo DS" \
+			31 "PC Engine" \
+			32 "PC Engine-CD" \
+			33 "PSX" \
+			34 "Sammy Atomiswave" \
+			35 "Saturn" \
+			36 "Sega Dreamcast" \
+			37 "Sega Naomi" \
+			38 "Sega Pico" \
+			39 "Sega32X" \
+			40 "SegaCD" \
+			41 "SG-1000" \
+			42 "Sharp X68000" \
+			43 "SNES" \
+			44 "Super Famicom" \
+			45 "SuperGrafx" \
+			46 "TG16" \
+			47 "TG-CD" \
+			48 "Videopac - Odyssey 2" \
+			49 "Virtualboy" \
+			50 "WonderSwan" \
+			51 "WonderSwan Color" \
+			52 "ZX Spectrum" \
+			53 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -542,29 +546,30 @@ clear
 			27) hide_bezel ngp ;;
 			28) hide_bezel ngpc ;;
 			29) hide_bezel n64 ;;
-			30) hide_bezel pcengine ;;
-			31) hide_bezel pce-cd ;;
-			32) hide_bezel psx ;;
-			33) hide_bezel atomiswave ;;
-			34) hide_bezel saturn ;;
-			35) hide_bezel dreamcast ;;
-			36) hide_bezel naomi ;;
-			37) hide_bezel pico ;;
-			38) hide_bezel sega32x ;;
-			39) hide_bezel segacd ;;
-			40) hide_bezel sg-1000 ;;
-			41) hide_bezel x68000 ;;
-			42) hide_bezel snes ;;
-			43) hide_bezel sfc ;;
-			44) hide_bezel supergrafx ;;
-			45) hide_bezel tg16 ;;
-			46) hide_bezel tg-cd ;;
-			47) hide_bezel videopac ;;
-			48) hide_bezel virtualboy ;;
-			49) hide_bezel wonderswan ;;
-			50) hide_bezel wonderswancolor ;;
-			51) hide_bezel zxspectrum ;;
-			52) hide_bezel zx81 ;;
+			30) hide_bezel nds ;;
+			31) hide_bezel pcengine ;;
+			32) hide_bezel pce-cd ;;
+			33) hide_bezel psx ;;
+			34) hide_bezel atomiswave ;;
+			35) hide_bezel saturn ;;
+			36) hide_bezel dreamcast ;;
+			37) hide_bezel naomi ;;
+			38) hide_bezel pico ;;
+			39) hide_bezel sega32x ;;
+			40) hide_bezel segacd ;;
+			41) hide_bezel sg-1000 ;;
+			42) hide_bezel x68000 ;;
+			43) hide_bezel snes ;;
+			44) hide_bezel sfc ;;
+			45) hide_bezel supergrafx ;;
+			46) hide_bezel tg16 ;;
+			47) hide_bezel tg-cd ;;
+			48) hide_bezel videopac ;;
+			49) hide_bezel virtualboy ;;
+			50) hide_bezel wonderswan ;;
+			51) hide_bezel wonderswancolor ;;
+			52) hide_bezel zxspectrum ;;
+			53) hide_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -607,29 +612,30 @@ clear
 			27 "NGP" \
 			28 "NGPC" \
 			29 "Nintendo 64" \
-			30 "PC Engine" \
-			31 "PC Engine-CD" \
-			32 "PSX" \
-			33 "Sammy Atomiswave" \
-			34 "Saturn" \
-			35 "Sega Dreamcast" \
-			36 "Sega Naomi" \
-			37 "Sega Pico" \
-			38 "Sega32X" \
-			39 "SegaCD" \
-			40 "SG-1000" \
-			41 "Sharp X68000" \
-			42 "SNES" \
-			43 "Super Famicom" \
-			44 "SuperGrafx" \
-			45 "TG16" \
-			46 "TG-CD" \
-			47 "Videopac - Odyssey 2" \
-			48 "Virtualboy" \
-			49 "WonderSwan" \
-			50 "WonderSwan Color" \
-			51 "ZX Spectrum" \
-			52 "ZX81" \
+			30 "Nintendo DS" \
+			31 "PC Engine" \
+			32 "PC Engine-CD" \
+			33 "PSX" \
+			34 "Sammy Atomiswave" \
+			35 "Saturn" \
+			36 "Sega Dreamcast" \
+			37 "Sega Naomi" \
+			38 "Sega Pico" \
+			39 "Sega32X" \
+			40 "SegaCD" \
+			41 "SG-1000" \
+			42 "Sharp X68000" \
+			43 "SNES" \
+			44 "Super Famicom" \
+			45 "SuperGrafx" \
+			46 "TG16" \
+			47 "TG-CD" \
+			48 "Videopac - Odyssey 2" \
+			49 "Virtualboy" \
+			50 "WonderSwan" \
+			51 "WonderSwan Color" \
+			52 "ZX Spectrum" \
+			53 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -662,29 +668,30 @@ clear
 			27) show_bezel ngp ;;
 			28) show_bezel ngpc ;;
 			29) show_bezel n64 ;;
-			30) show_bezel pcengine ;;
-			31) show_bezel pce-cd ;;
-			32) show_bezel psx ;;
-			33) show_bezel atomiswave ;;
-			34) show_bezel saturn ;;
-			35) show_bezel dreamcast ;;
-			36) show_bezel naomi ;;
-			37) show_bezel pico ;;
-			38) show_bezel sega32x ;;
-			39) show_bezel segacd ;;
-			40) show_bezel sg-1000 ;;
-			41) show_bezel x68000 ;;
-			42) show_bezel snes ;;
-			43) show_bezel sfc ;;
-			44) show_bezel supergrafx ;;
-			45) show_bezel tg16 ;;
-			46) show_bezel tg-cd ;;
-			47) show_bezel videopac ;;
-			48) show_bezel virtualboy ;;
-			49) show_bezel wonderswan ;;
-			50) show_bezel wonderswancolor ;;
-			51) show_bezel zxspectrum ;;
-			52) show_bezel zx81 ;;
+			30) show_bezel nds ;;
+			31) show_bezel pcengine ;;
+			32) show_bezel pce-cd ;;
+			33) show_bezel psx ;;
+			34) show_bezel atomiswave ;;
+			35) show_bezel saturn ;;
+			36) show_bezel dreamcast ;;
+			37) show_bezel naomi ;;
+			38) show_bezel pico ;;
+			39) show_bezel sega32x ;;
+			40) show_bezel segacd ;;
+			41) show_bezel sg-1000 ;;
+			42) show_bezel x68000 ;;
+			43) show_bezel snes ;;
+			44) show_bezel sfc ;;
+			45) show_bezel supergrafx ;;
+			46) show_bezel tg16 ;;
+			47) show_bezel tg-cd ;;
+			48) show_bezel videopac ;;
+			49) show_bezel virtualboy ;;
+			50) show_bezel wonderswan ;;
+			51) show_bezel wonderswancolor ;;
+			52) show_bezel zxspectrum ;;
+			53) show_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -1004,6 +1011,21 @@ n64)
     cp /opt/retropie/configs/n64/retroarch.cfg /opt/retropie/configs/n64/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Nintendo-64.cfg"' /opt/retropie/configs/n64/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/n64/retroarch.cfg
+  fi
+  ;;
+nds)
+  ifexist=`cat /opt/retropie/configs/nds/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/nds/retroarch.cfg /opt/retropie/configs/nds/retroarch.cfg.bkp
+    cat /opt/retropie/configs/nds/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/nds/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Nintendo-DS.cfg"' /opt/retropie/configs/nds/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/nds/retroarch.cfg
+  else
+    cp /opt/retropie/configs/nds/retroarch.cfg /opt/retropie/configs/nds/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Nintendo-DS.cfg"' /opt/retropie/configs/nds/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/nds/retroarch.cfg
   fi
   ;;
 naomi)
@@ -1662,6 +1684,7 @@ echo "NEC TurboGrafx-CD                               lr-beetle-pce-fast" >> /tm
 echo "NEC TurboGrafx-16                               lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo 64                                     lr-Mupen64plus" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Entertainment System                   lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo DS                                     lr-desmume, lr-desmume-2015" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Famicom Disk System                    lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Famicom                                lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Game Boy                               lr-gambatte" >> /tmp/bezelprojectinfo.txt
