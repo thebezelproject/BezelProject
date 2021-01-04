@@ -232,6 +232,7 @@ function download_bezel() {
         'thebezelproject GBC'
         'thebezelproject GCEVectrex'
         'thebezelproject GameGear'
+        'thebezelproject Intellivision'
         'thebezelproject MAME'
         'thebezelproject MSX'
         'thebezelproject MSX2'
@@ -255,6 +256,8 @@ function download_bezel() {
         'thebezelproject SuperGrafx'
         'thebezelproject TG-CD'
         'thebezelproject TG16'
+        'thebezelproject Videopac'
+        'thebezelproject Virtualboy'
     )
     while true; do
         local theme
