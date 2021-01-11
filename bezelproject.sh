@@ -227,6 +227,7 @@ function download_bezel() {
         'thebezelproject C64'
         'thebezelproject ColecoVision'
         'thebezelproject Dreamcast'
+        'thebezelproject FDS'
         'thebezelproject GB'
         'thebezelproject GBA'
         'thebezelproject GBC'
