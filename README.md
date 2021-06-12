@@ -20,7 +20,7 @@ Systems with shared Retroarch cores and filenames:
 Only one bezel can exist for a specific game name, so systems that share the same Retroarch core and rom filename will use the same bezel.
 
 -------
-INSTALLATION - using a Raspberry Pi build of RetroPie
+INSTALLATION - using a Raspberry Pi build of RetroPie, or an x86 build under Ubuntu, for example.
 
 NOTE: do not install the script as user 'root'.  Only install the script as user 'pi'...otherwise it may cause future errors.
 
