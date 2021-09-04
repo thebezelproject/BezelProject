@@ -233,6 +233,7 @@ function download_bezel() {
         'thebezelproject ColecoVision'
         'thebezelproject Dreamcast'
         'thebezelproject FDS'
+        'thebezelproject Famicom'
         'thebezelproject GB'
         'thebezelproject GBA'
         'thebezelproject GBC'
