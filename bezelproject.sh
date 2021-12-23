@@ -221,6 +221,7 @@ rm /home/pi/RetroPie/retropiemenu/bezelproject.sh
 
 function download_bezel() {
     local themes=(
+        'thebezelproject Amiga'
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
