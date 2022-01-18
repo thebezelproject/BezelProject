@@ -131,7 +131,7 @@ function install_bezel_pack() {
 
     git clone "https://github.com/$repo/bezelproject-$theme.git" "/tmp/${theme}"
     cp -r "/tmp/${theme}/retroarch/" /opt/retropie/configs/all/
-    sudo rm -rf "/tmp/${theme}"
+    rm -rf "/tmp/${theme}"
 
     if [[ "${atheme}" == "mame" ]];then
       show_bezel "arcade"
@@ -344,7 +344,7 @@ function install_bezel_packsa() {
 
     git clone "https://github.com/$repo/bezelprojectsa-$theme.git" "/tmp/${theme}"
     cp -r "/tmp/${theme}/retroarch/" /opt/retropie/configs/all/
-    sudo rm -rf "/tmp/${theme}"
+    rm -rf "/tmp/${theme}"
 
     if [[ "${atheme}" == "mame" ]];then
       show_bezel "arcade"
