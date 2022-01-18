@@ -48,7 +48,7 @@ function update_script() {
 if [[ -d "/home/pigaming" ]]; then
    cd "/home/pigaming/RetroPie/retropiemenu"
 else
-   cd "/home/pi/RetroPie/retropiemenu"
+   cd "$HOME/RetroPie/retropiemenu"
 fi
 mv "bezelproject.sh" "bezelproject.sh.bkp"
 wget "https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh"
@@ -215,7 +215,7 @@ hide_bezel zxspectrum
 
 rm -rf /opt/retropie/configs/all/retroarch/overlay/GameBezels
 rm -rf /opt/retropie/configs/all/retroarch/overlay/ArcadeBezels
-rm /home/pi/RetroPie/retropiemenu/bezelproject.sh
+rm $HOME/RetroPie/retropiemenu/bezelproject.sh
 
 }
 
