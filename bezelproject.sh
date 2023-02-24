@@ -266,6 +266,7 @@ function download_bezel() {
         'thebezelproject TG16'
         'thebezelproject Videopac'
         'thebezelproject Virtualboy'
+        'thebezelproject ZX81'
     )
     while true; do
         local theme
