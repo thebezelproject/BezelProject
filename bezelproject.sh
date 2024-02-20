@@ -226,6 +226,7 @@ function download_bezel() {
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
+        'thebezelproject Atari800'
         'thebezelproject AtariJaguar'
         'thebezelproject AtariLynx'
         'thebezelproject Atomiswave'
