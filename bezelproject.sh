@@ -268,6 +268,7 @@ function download_bezel() {
         'thebezelproject TG16'
         'thebezelproject Videopac'
         'thebezelproject Virtualboy'
+        'thebezelproject X68000'
         'thebezelproject ZX81'
     )
     while true; do
