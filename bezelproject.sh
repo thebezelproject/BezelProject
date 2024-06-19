@@ -229,6 +229,7 @@ function download_bezel() {
         'thebezelproject Atari800'
         'thebezelproject AtariJaguar'
         'thebezelproject AtariLynx'
+        'thebezelproject AtariST'
         'thebezelproject Atomiswave'
         'thebezelproject C64'
         'thebezelproject CD32'
