@@ -1673,11 +1673,11 @@ zx81)
     cp /opt/retropie/configs/zx81/retroarch.cfg /opt/retropie/configs/zx81/retroarch.cfg.bkp
     cat /opt/retropie/configs/zx81/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
     cp /tmp/retroarch.cfg /opt/retropie/configs/zx81/retroarch.cfg
-    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sinclair-ZX-Spectrum.cfg"' /opt/retropie/configs/zx81/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sinclair-ZX-81.cfg"' /opt/retropie/configs/zx81/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/zx81/retroarch.cfg
   else
     cp /opt/retropie/configs/zx81/retroarch.cfg /opt/retropie/configs/zx81/retroarch.cfg.bkp
-    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sinclair-ZX-Spectrum.cfg"' /opt/retropie/configs/zx81/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sinclair-ZX-81.cfg"' /opt/retropie/configs/zx81/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/zx81/retroarch.cfg
   fi
   ;;
