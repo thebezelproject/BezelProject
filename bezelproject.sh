@@ -271,6 +271,7 @@ function download_bezel() {
         'thebezelproject Virtualboy'
         'thebezelproject X68000'
         'thebezelproject ZX81'
+        'thebezelproject ZXSpectrum'
     )
     while true; do
         local theme
