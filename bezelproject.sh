@@ -835,6 +835,21 @@ mame-libretro)
     mv "/opt/retropie/configs/all/retroarch/config/disable_MAME 2010" "/opt/retropie/configs/all/retroarch/config/MAME 2010"
   fi
   ;;
+3do)
+  ifexist=`cat /opt/retropie/configs/3do/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/3do/retroarch.cfg /opt/retropie/configs/3do/retroarch.cfg.bkp
+    cat /opt/retropie/configs/3do/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/3do/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Panasonic-3DO.cfg"' /opt/retropie/configs/3do/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/3do/retroarch.cfg
+  else
+    cp /opt/retropie/configs/3do/retroarch.cfg /opt/retropie/configs/3do/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Panasonic-3DO.cfg"' /opt/retropie/configs/3do/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/3do/retroarch.cfg
+  fi
+  ;;
 amiga)
   ifexist=`cat /opt/retropie/configs/amiga/retroarch.cfg |grep "input_overlay" |wc -l`
   if [[ ${ifexist} > 0 ]]
@@ -1580,30 +1595,30 @@ cd32)
   ifexist=`cat /opt/retropie/configs/cd32/retroarch.cfg |grep "input_overlay" |wc -l`
   if [[ ${ifexist} > 0 ]]
   then
-    cp /opt/retropie/configs/amiga/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg.bkp
-    cat /opt/retropie/configs/amiga/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
-    cp /tmp/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg
-    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-Amiga-CD32.cfg"' /opt/retropie/configs/amiga/retroarch.cfg
-    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/amiga/retroarch.cfg
+    cp /opt/retropie/configs/cd32/retroarch.cfg /opt/retropie/configs/cd32/retroarch.cfg.bkp
+    cat /opt/retropie/configs/cd32/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/cd32/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-cd32-CD32.cfg"' /opt/retropie/configs/cd32/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/cd32/retroarch.cfg
   else
-    cp /opt/retropie/configs/amiga/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg.bkp
-    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-Amiga-CD32.cfg"' /opt/retropie/configs/amiga/retroarch.cfg
-    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/amiga/retroarch.cfg
+    cp /opt/retropie/configs/cd32/retroarch.cfg /opt/retropie/configs/cd32/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-cd32-CD32.cfg"' /opt/retropie/configs/cd32/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/cd32/retroarch.cfg
   fi
   ;;
 cdtv)
   ifexist=`cat /opt/retropie/configs/cdtv/retroarch.cfg |grep "input_overlay" |wc -l`
   if [[ ${ifexist} > 0 ]]
   then
-    cp /opt/retropie/configs/amiga/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg.bkp
-    cat /opt/retropie/configs/amiga/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
-    cp /tmp/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg
-    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-CDTV.cfg"' /opt/retropie/configs/amiga/retroarch.cfg
-    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/amiga/retroarch.cfg
+    cp /opt/retropie/configs/cdtv/retroarch.cfg /opt/retropie/configs/cdtv/retroarch.cfg.bkp
+    cat /opt/retropie/configs/cdtv/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/cdtv/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-CDTV.cfg"' /opt/retropie/configs/cdtv/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/cdtv/retroarch.cfg
   else
-    cp /opt/retropie/configs/amiga/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg.bkp
-    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-CDTV.cfg"' /opt/retropie/configs/amiga/retroarch.cfg
-    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/amiga/retroarch.cfg
+    cp /opt/retropie/configs/cdtv/retroarch.cfg /opt/retropie/configs/cdtv/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-CDTV.cfg"' /opt/retropie/configs/cdtv/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/cdtv/retroarch.cfg
   fi
   ;;
 msx)
@@ -1749,26 +1764,29 @@ echo "Atari ST                                        lr-hatari" >> /tmp/bezelpr
 echo "Bandai WonderSwan                               lr-beetle-wswan" >> /tmp/bezelprojectinfo.txt
 echo "Bandai WonderSwan Color                         lr-beetle-wswan" >> /tmp/bezelprojectinfo.txt
 echo "ColecoVision                                    lr-bluemsx" >> /tmp/bezelprojectinfo.txt
+echo "Commodore 64, VIC-20, PET                       lr-vice" >> /tmp/bezelprojectinfo.txt
+echo "Commodore Amiga                                 lr-puae, lr-puae2021" >> /tmp/bezelprojectinfo.txt
 echo "GCE Vectrex                                     lr-vecx" >> /tmp/bezelprojectinfo.txt
 echo "MAME                                            lr-various" >> /tmp/bezelprojectinfo.txt
 echo "Mattel Intellivision                            lr-freeintv" >> /tmp/bezelprojectinfo.txt
 echo "MSX                                             lr-fmsx, lr-bluemsx" >> /tmp/bezelprojectinfo.txt
 echo "MSX2                                            lr-fmsx, lr-bluemsx" >> /tmp/bezelprojectinfo.txt
 echo "NEC PC Engine CD                                lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
-echo "NEC PC Engine                                   lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
+echo "NEC PC Engine                                   lr-beetle-pce-fast, lr-beetle-supergrafx" >> /tmp/bezelprojectinfo.txt
 echo "NEC SuperGrafx                                  lr-beetle-supergrafx" >> /tmp/bezelprojectinfo.txt
 echo "NEC TurboGrafx-CD                               lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
 echo "NEC TurboGrafx-16                               lr-beetle-pce-fast" >> /tmp/bezelprojectinfo.txt
-echo "Nintendo 64                                     lr-Mupen64plus" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo 64                                     lr-Mupen64plus, lr-mupen64plus-next" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Entertainment System                   lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo DS                                     lr-desmume, lr-desmume-2015" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Famicom Disk System                    lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Famicom                                lr-fceumm, lr-nestopia" >> /tmp/bezelprojectinfo.txt
-echo "Nintendo Game Boy                               lr-gambatte" >> /tmp/bezelprojectinfo.txt
-echo "Nintendo Game Boy Color                         lr-gambatte" >> /tmp/bezelprojectinfo.txt
-echo "Nintendo Game Boy Advance                       lr-mgba" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Game Boy                               lr-gambatte, lr-tgbdual, lr-mgba" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Game Boy Color                         lr-gambatte, lr-tgbdual, lr-mgba" >> /tmp/bezelprojectinfo.txt
+echo "Nintendo Game Boy Advance                       lr-mgba, lr-vba-next, lr-gpsp" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Super Famicom                          lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
 echo "Nintendo Virtual Boy                            lr-beetle-vb" >> /tmp/bezelprojectinfo.txt
+echo "Panasonic 3DO                                   lr-opera" >> /tmp/bezelprojectinfo.txt
 echo "Philips Videopac G7000 - Magnavox Odyssey2      lr-lr-o2em" >> /tmp/bezelprojectinfo.txt
 echo "Sammy Atomiswave                                lr-flycast" >> /tmp/bezelprojectinfo.txt
 echo "Sega 32X                                        lr-picodrive, lr-genesis-plus-gx" >> /tmp/bezelprojectinfo.txt
@@ -1789,6 +1807,7 @@ echo "Sinclair ZX Spectrum                            lr-fuse" >> /tmp/bezelproj
 echo "SNK Neo Geo Pocket                              lr-beetle-ngp" >> /tmp/bezelprojectinfo.txt
 echo "SNK Neo Geo Pocket Color                        lr-beetle-ngp" >> /tmp/bezelprojectinfo.txt
 echo "Sony PlayStation                                lr-pcsx-rearmed" >> /tmp/bezelprojectinfo.txt
+echo "Sony PSP                                        lr-ppsspp" >> /tmp/bezelprojectinfo.txt
 echo "Super Nintendo Entertainment System             lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
 echo "" >> /tmp/bezelprojectinfo.txt
 
