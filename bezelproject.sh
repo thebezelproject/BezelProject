@@ -204,6 +204,7 @@ hide_bezel snes
 hide_bezel supergrafx
 hide_bezel tg-cd
 hide_bezel tg16
+hide_bezel trs-80
 hide_bezel vectrex
 hide_bezel videopac
 hide_bezel virtualboy
@@ -267,6 +268,7 @@ function download_bezel() {
         'thebezelproject SuperGrafx'
         'thebezelproject TG-CD'
         'thebezelproject TG16'
+        'thebezelproject TRS-80'
         'thebezelproject Videopac'
         'thebezelproject Virtualboy'
         'thebezelproject X68000'
@@ -409,6 +411,7 @@ function download_bezelsa() {
         'thebezelproject SuperGrafx'
         'thebezelproject TG-CD'
         'thebezelproject TG16'
+        'thebezelproject TRS-80'
         'thebezelproject Videopac'
         'thebezelproject Virtualboy'
         'thebezelproject WonderSwan'
@@ -531,12 +534,13 @@ clear
 			48 "SuperGrafx" \
 			49 "TG16" \
 			50 "TG-CD" \
-			51 "Videopac - Odyssey 2" \
-			52 "Virtualboy" \
-			53 "WonderSwan" \
-			54 "WonderSwan Color" \
-			55 "ZX Spectrum" \
-			56 "ZX81" \
+			51 "TRS-80" \
+			52 "Videopac - Odyssey 2" \
+			53 "Virtualboy" \
+			54 "WonderSwan" \
+			55 "WonderSwan Color" \
+			56 "ZX Spectrum" \
+			57 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -590,12 +594,13 @@ clear
 			48) hide_bezel supergrafx ;;
 			49) hide_bezel tg16 ;;
 			50) hide_bezel tg-cd ;;
-			51) hide_bezel videopac ;;
-			52) hide_bezel virtualboy ;;
-			53) hide_bezel wonderswan ;;
-			54) hide_bezel wonderswancolor ;;
-			55) hide_bezel zxspectrum ;;
-			56) hide_bezel zx81 ;;
+			51) hide_bezel trs-80 ;;
+			52) hide_bezel videopac ;;
+			53) hide_bezel virtualboy ;;
+			54) hide_bezel wonderswan ;;
+			55) hide_bezel wonderswancolor ;;
+			56) hide_bezel zxspectrum ;;
+			57) hide_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -659,12 +664,13 @@ clear
 			48 "SuperGrafx" \
 			49 "TG16" \
 			50 "TG-CD" \
-			51 "Videopac - Odyssey 2" \
-			52 "Virtualboy" \
-			53 "WonderSwan" \
-			54 "WonderSwan Color" \
-			55 "ZX Spectrum" \
-			56 "ZX81" \
+			51 "TRS-80" \
+			52 "Videopac - Odyssey 2" \
+			53 "Virtualboy" \
+			54 "WonderSwan" \
+			55 "WonderSwan Color" \
+			56 "ZX Spectrum" \
+			57 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -718,12 +724,13 @@ clear
 			48) show_bezel supergrafx ;;
 			49) show_bezel tg16 ;;
 			50) show_bezel tg-cd ;;
-			51) show_bezel videopac ;;
-			52) show_bezel virtualboy ;;
-			53) show_bezel wonderswan ;;
-			54) show_bezel wonderswancolor ;;
-			55) show_bezel zxspectrum ;;
-			56) show_bezel zx81 ;;
+			51) show_bezel trs-80 ;;
+			52) show_bezel videopac ;;
+			53) show_bezel virtualboy ;;
+			54) show_bezel wonderswan ;;
+			55) show_bezel wonderswancolor ;;
+			56) show_bezel zxspectrum ;;
+			57) show_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -1651,6 +1658,21 @@ msx2)
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/msx2/retroarch.cfg
   fi
   ;;
+trs80)
+  ifexist=`cat /opt/retropie/configs/trs80/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/trs80/retroarch.cfg /opt/retropie/configs/trs80/retroarch.cfg.bkp
+    cat /opt/retropie/configs/trs80/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/trs80/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Tandy-TRS-80.cfg"' /opt/retropie/configs/trs80/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/trs80/retroarch.cfg
+  else
+    cp /opt/retropie/configs/trs80/retroarch.cfg /opt/retropie/configs/trs80/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Tandy-TRS-80.cfg"' /opt/retropie/configs/trs80/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/trs80/retroarch.cfg
+  fi
+  ;;
 videopac)
   ifexist=`cat /opt/retropie/configs/videopac/retroarch.cfg |grep "input_overlay" |wc -l`
   if [[ ${ifexist} > 0 ]]
@@ -1809,6 +1831,7 @@ echo "SNK Neo Geo Pocket Color                        lr-beetle-ngp" >> /tmp/bez
 echo "Sony PlayStation                                lr-pcsx-rearmed" >> /tmp/bezelprojectinfo.txt
 echo "Sony PSP                                        lr-ppsspp" >> /tmp/bezelprojectinfo.txt
 echo "Super Nintendo Entertainment System             lr-snes9x, lr-snes9x2010" >> /tmp/bezelprojectinfo.txt
+echo "TRS-80                                          lr-various" >> /tmp/bezelprojectinfo.txt
 echo "" >> /tmp/bezelprojectinfo.txt
 
 dialog --backtitle "The Bezel Project" \
