@@ -158,6 +158,7 @@ function removebezelproject() {
 hide_bezel amiga
 hide_bezel amstradcpc
 hide_bezel arcade
+hide_bezel arcadia2001
 hide_bezel atari2600
 hide_bezel atari5200
 hide_bezel atari7800
@@ -226,6 +227,7 @@ function download_bezel() {
     local themes=(
         'thebezelproject Amiga'
         'thebezelproject AmstradCPC'
+        'thebezelproject Arcadia2001'
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
@@ -373,6 +375,7 @@ function download_bezelsa() {
     local themes=(
         'thebezelproject Amiga'
         'thebezelproject AmstradCPC'
+		'thebezelproject Arcadia2001'
         'thebezelproject Atari2600'
         'thebezelproject Atari5200'
         'thebezelproject Atari7800'
@@ -495,68 +498,70 @@ clear
 			1 "Amiga" \
 			2 "AmstradCPC" \
 			3 "Arcade" \
-			4 "Atari 2600" \
-			5 "Atari 5200" \
-			6 "Atari 7800" \
-			7 "Atari 800" \
-			8 "Atari Lynx" \
-			9 "Atari ST" \
-			10 "AtariJaguar" \
-			11 "C64" \
-			12 "CD32" \
-			13 "CDTV" \
-			14 "ColecoVision" \
-			15 "Famicom" \
-			16 "Famicom Disk System" \
-			17 "Final Burn Alpha" \
-			18 "Game Boy" \
-			19 "Game Boy Advance" \
-			20 "Game Boy Color" \
-			21 "GameCube" \
-			22 "GameGear" \
-			23 "GCEVectrex" \
-			24 "Intellivision" \
-			25 "MAME Libretro" \
-			26 "MasterSystem" \
-			27 "MegaDrive" \
-			28 "MSX" \
-			29 "MSX2" \
-			30 "NES" \
-			31 "NGP" \
-			32 "NGPC" \
-			33 "Nintendo 64" \
-			34 "Nintendo DS" \
-			35 "PC Engine" \
-			36 "PC Engine-CD" \
-			37 "PSX" \
-			38 "Sammy Atomiswave" \
-			39 "Saturn" \
-			40 "Sega Dreamcast" \
-			41 "Sega Naomi" \
-			42 "Sega Pico" \
-			43 "Sega32X" \
-			44 "SegaCD" \
-			45 "SG-1000" \
-			46 "Sharp X68000" \
-			47 "SNES" \
-			48 "Super Famicom" \
-			49 "SuperGrafx" \
-			50 "TG16" \
-			51 "TG-CD" \
-			52 "TRS-80" \
-			53 "Videopac - Odyssey 2" \
-			54 "Virtualboy" \
-			55 "Wii" \
-			56 "WonderSwan" \
-			57 "WonderSwan Color" \
-			58 "ZX Spectrum" \
-			59 "ZX81" \
+			4 "Arcadia 2001" \
+			5 "Atari 2600" \
+			6 "Atari 5200" \
+			7 "Atari 7800" \
+			8 "Atari 800" \
+			9 "Atari Lynx" \
+			10 "Atari ST" \
+			11 "AtariJaguar" \
+			12 "C64" \
+			13 "CD32" \
+			14 "CDTV" \
+			15 "ColecoVision" \
+			16 "Famicom" \
+			17 "Famicom Disk System" \
+			18 "Final Burn Alpha" \
+			19 "Game Boy" \
+			20 "Game Boy Advance" \
+			21 "Game Boy Color" \
+			22 "GameCube" \
+			23 "GameGear" \
+			24 "GCEVectrex" \
+			25 "Intellivision" \
+			26 "MAME Libretro" \
+			27 "MasterSystem" \
+			28 "MegaDrive" \
+			29 "MSX" \
+			30 "MSX2" \
+			31 "NES" \
+			32 "NGP" \
+			33 "NGPC" \
+			34 "Nintendo 64" \
+			35 "Nintendo DS" \
+			36 "PC Engine" \
+			37 "PC Engine-CD" \
+			38 "PSX" \
+			39 "Sammy Atomiswave" \
+			40 "Saturn" \
+			41 "Sega Dreamcast" \
+			42 "Sega Naomi" \
+			43 "Sega Pico" \
+			44 "Sega32X" \
+			45 "SegaCD" \
+			46 "SG-1000" \
+			47 "Sharp X68000" \
+			48 "SNES" \
+			49 "Super Famicom" \
+			50 "SuperGrafx" \
+			51 "TG16" \
+			52 "TG-CD" \
+			53 "TRS-80" \
+			54 "Videopac - Odyssey 2" \
+			55 "Virtualboy" \
+			56 "Wii" \
+			57 "WonderSwan" \
+			58 "WonderSwan Color" \
+			59 "ZX Spectrum" \
+			60 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
 			1) hide_bezel amiga ;;
 			2) hide_bezel amstradcpc ;;
 			3) hide_bezel arcade ;;
+			3) hide_bezel arcadia2001 ;;
 			4) hide_bezel atari2600 ;;
 			5) hide_bezel atari5200 ;;
 			6) hide_bezel atari7800 ;;
@@ -629,68 +634,70 @@ clear
 			1 "Amiga" \
 			2 "AmstradCPC" \
 			3 "Arcade" \
-			4 "Atari 2600" \
-			5 "Atari 5200" \
-			6 "Atari 7800" \
-			7 "Atari 800" \
-			8 "Atari Lynx" \
-			9 "Atari ST" \
-			10 "AtariJaguar" \
-			11 "C64" \
-			12 "CD32" \
-			13 "CDTV" \
-			14 "ColecoVision" \
-			15 "Famicom" \
-			16 "Famicom Disk System" \
-			17 "Final Burn Alpha" \
-			18 "Game Boy" \
-			19 "Game Boy Advance" \
-			20 "Game Boy Color" \
-			21 "GameCube" \
-			22 "GameGear" \
-			23 "GCEVectrex" \
-			24 "Intellivision" \
-			25 "MAME Libretro" \
-			26 "MasterSystem" \
-			27 "MegaDrive" \
-			28 "MSX" \
-			29 "MSX2" \
-			30 "NES" \
-			31 "NGP" \
-			32 "NGPC" \
-			33 "Nintendo 64" \
-			34 "Nintendo DS" \
-			35 "PC Engine" \
-			36 "PC Engine-CD" \
-			37 "PSX" \
-			38 "Sammy Atomiswave" \
-			39 "Saturn" \
-			40 "Sega Dreamcast" \
-			41 "Sega Naomi" \
-			42 "Sega Pico" \
-			43 "Sega32X" \
-			44 "SegaCD" \
-			45 "SG-1000" \
-			46 "Sharp X68000" \
-			47 "SNES" \
-			48 "Super Famicom" \
-			49 "SuperGrafx" \
-			50 "TG16" \
-			51 "TG-CD" \
-			52 "TRS-80" \
-			53 "Videopac - Odyssey 2" \
-			54 "Virtualboy" \
-			55 "Wii" \
-			56 "WonderSwan" \
-			57 "WonderSwan Color" \
-			58 "ZX Spectrum" \
-			59 "ZX81" \
+			4 "Arcadia 2001" \
+			5 "Atari 2600" \
+			6 "Atari 5200" \
+			7 "Atari 7800" \
+			8 "Atari 800" \
+			9 "Atari Lynx" \
+			10 "Atari ST" \
+			11 "AtariJaguar" \
+			12 "C64" \
+			13 "CD32" \
+			14 "CDTV" \
+			15 "ColecoVision" \
+			16 "Famicom" \
+			17 "Famicom Disk System" \
+			18 "Final Burn Alpha" \
+			19 "Game Boy" \
+			20 "Game Boy Advance" \
+			21 "Game Boy Color" \
+			22 "GameCube" \
+			23 "GameGear" \
+			24 "GCEVectrex" \
+			25 "Intellivision" \
+			26 "MAME Libretro" \
+			27 "MasterSystem" \
+			28 "MegaDrive" \
+			29 "MSX" \
+			30 "MSX2" \
+			31 "NES" \
+			32 "NGP" \
+			33 "NGPC" \
+			34 "Nintendo 64" \
+			35 "Nintendo DS" \
+			36 "PC Engine" \
+			37 "PC Engine-CD" \
+			38 "PSX" \
+			39 "Sammy Atomiswave" \
+			40 "Saturn" \
+			41 "Sega Dreamcast" \
+			42 "Sega Naomi" \
+			43 "Sega Pico" \
+			44 "Sega32X" \
+			45 "SegaCD" \
+			46 "SG-1000" \
+			47 "Sharp X68000" \
+			48 "SNES" \
+			49 "Super Famicom" \
+			50 "SuperGrafx" \
+			51 "TG16" \
+			52 "TG-CD" \
+			53 "TRS-80" \
+			54 "Videopac - Odyssey 2" \
+			55 "Virtualboy" \
+			56 "Wii" \
+			57 "WonderSwan" \
+			58 "WonderSwan Color" \
+			59 "ZX Spectrum" \
+			60 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
 			1) show_bezel amiga ;;
 			2) show_bezel amstradcpc ;;
 			3) show_bezel arcade ;;
+			3) show_bezel arcadia2001 ;;
 			4) show_bezel atari2600 ;;
 			5) show_bezel atari5200 ;;
 			6) show_bezel atari7800 ;;
@@ -886,6 +893,21 @@ amiga)
     cp /opt/retropie/configs/amiga/retroarch.cfg /opt/retropie/configs/amiga/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Commodore-Amiga.cfg"' /opt/retropie/configs/amiga/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/amiga/retroarch.cfg
+  fi
+  ;;
+arcadia2001)
+  ifexist=`cat /opt/retropie/configs/arcadia2001/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/arcadia2001/retroarch.cfg /opt/retropie/configs/arcadia2001/retroarch.cfg.bkp
+    cat /opt/retropie/configs/arcadia2001/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/arcadia2001/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Atari-2600.cfg"' /opt/retropie/configs/arcadia2001/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/arcadia2001/retroarch.cfg
+  else
+    cp /opt/retropie/configs/arcadia2001/retroarch.cfg /opt/retropie/configs/arcadia2001/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Atari-2600.cfg"' /opt/retropie/configs/arcadia2001/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/arcadia2001/retroarch.cfg
   fi
   ;;
 atari2600)
@@ -1822,6 +1844,7 @@ echo "" >> /tmp/bezelprojectinfo.txt
 
 echo "System                                          Retroarch Emulator" >> /tmp/bezelprojectinfo.txt
 echo "Amstrad CPC                                     lr-caprice32" >> /tmp/bezelprojectinfo.txt
+echo "Arcadia 2001                                    lr-amiarcadia" >> /tmp/bezelprojectinfo.txt
 echo "Atari 800                                       lr-atari800" >> /tmp/bezelprojectinfo.txt
 echo "Atari 2600                                      lr-stella" >> /tmp/bezelprojectinfo.txt
 echo "Atari 5200                                      lr-atari800" >> /tmp/bezelprojectinfo.txt
