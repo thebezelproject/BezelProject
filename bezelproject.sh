@@ -198,7 +198,7 @@ hide_bezel pcengine
 hide_bezel pico
 hide_bezel psx
 hide_bezel saturn
-hide_bezel saturn
+hide_bezel scv
 hide_bezel sega32x
 hide_bezel segacd
 hide_bezel sfc
@@ -270,6 +270,7 @@ function download_bezel() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject Saturn'
+        'thebezelproject SCV'
         'thebezelproject Sega32X'
         'thebezelproject SegaCD'
         'thebezelproject SuperGrafx'
@@ -419,6 +420,7 @@ function download_bezelsa() {
         'thebezelproject SG-1000'
         'thebezelproject SNES'
         'thebezelproject Saturn'
+        'thebezelproject SCV'
         'thebezelproject Sega32X'
         'thebezelproject SegaCD'
         'thebezelproject SuperGrafx'
@@ -539,26 +541,27 @@ clear
 			39 "PSX" \
 			40 "Sammy Atomiswave" \
 			41 "Saturn" \
-			42 "Sega Dreamcast" \
-			43 "Sega Naomi" \
-			44 "Sega Pico" \
-			45 "Sega32X" \
-			46 "SegaCD" \
-			47 "SG-1000" \
-			48 "Sharp X68000" \
-			49 "SNES" \
-			50 "Super Famicom" \
-			51 "SuperGrafx" \
-			52 "TG16" \
-			53 "TG-CD" \
-			54 "TRS-80" \
-			55 "Videopac - Odyssey 2" \
-			56 "Virtualboy" \
-			57 "Wii" \
-			58 "WonderSwan" \
-			59 "WonderSwan Color" \
-			60 "ZX Spectrum" \
-			61 "ZX81" \
+			42 "SCV" \
+			43 "Sega Dreamcast" \
+			44 "Sega Naomi" \
+			45 "Sega Pico" \
+			46 "Sega32X" \
+			47 "SegaCD" \
+			48 "SG-1000" \
+			49 "Sharp X68000" \
+			50 "SNES" \
+			51 "Super Famicom" \
+			52 "SuperGrafx" \
+			53 "TG16" \
+			54 "TG-CD" \
+			55 "TRS-80" \
+			56 "Videopac - Odyssey 2" \
+			57 "Virtualboy" \
+			58 "Wii" \
+			59 "WonderSwan" \
+			60 "WonderSwan Color" \
+			61 "ZX Spectrum" \
+			62 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -603,26 +606,27 @@ clear
 			39) hide_bezel psx ;;
 			40) hide_bezel atomiswave ;;
 			41) hide_bezel saturn ;;
-			42) hide_bezel dreamcast ;;
-			43) hide_bezel naomi ;;
-			44) hide_bezel pico ;;
-			45) hide_bezel sega32x ;;
-			46) hide_bezel segacd ;;
-			47) hide_bezel sg-1000 ;;
-			48) hide_bezel x68000 ;;
-			49) hide_bezel snes ;;
-			50) hide_bezel sfc ;;
-			51) hide_bezel supergrafx ;;
-			52) hide_bezel tg16 ;;
-			53) hide_bezel tg-cd ;;
-			54) hide_bezel trs-80 ;;
-			55) hide_bezel videopac ;;
-			56) hide_bezel virtualboy ;;
-			57) hide_bezel wii ;;
-			58) hide_bezel wonderswan ;;
-			59) hide_bezel wonderswancolor ;;
-			60) hide_bezel zxspectrum ;;
-			61) hide_bezel zx81 ;;
+			42) hide_bezel scv ;;
+			43) hide_bezel dreamcast ;;
+			44) hide_bezel naomi ;;
+			45) hide_bezel pico ;;
+			46) hide_bezel sega32x ;;
+			47) hide_bezel segacd ;;
+			48) hide_bezel sg-1000 ;;
+			49) hide_bezel x68000 ;;
+			50) hide_bezel snes ;;
+			51) hide_bezel sfc ;;
+			52) hide_bezel supergrafx ;;
+			53) hide_bezel tg16 ;;
+			54) hide_bezel tg-cd ;;
+			55) hide_bezel trs-80 ;;
+			56) hide_bezel videopac ;;
+			57) hide_bezel virtualboy ;;
+			58) hide_bezel wii ;;
+			59) hide_bezel wonderswan ;;
+			60) hide_bezel wonderswancolor ;;
+			61) hide_bezel zxspectrum ;;
+			62) hide_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -677,26 +681,27 @@ clear
 			39 "PSX" \
 			40 "Sammy Atomiswave" \
 			41 "Saturn" \
-			42 "Sega Dreamcast" \
-			43 "Sega Naomi" \
-			44 "Sega Pico" \
-			45 "Sega32X" \
-			46 "SegaCD" \
-			47 "SG-1000" \
-			48 "Sharp X68000" \
-			49 "SNES" \
-			50 "Super Famicom" \
-			51 "SuperGrafx" \
-			52 "TG16" \
-			53 "TG-CD" \
-			54 "TRS-80" \
-			55 "Videopac - Odyssey 2" \
-			56 "Virtualboy" \
-			57 "Wii" \
-			58 "WonderSwan" \
-			59 "WonderSwan Color" \
-			60 "ZX Spectrum" \
-			61 "ZX81" \
+			42 "SCV" \
+			43 "Sega Dreamcast" \
+			44 "Sega Naomi" \
+			45 "Sega Pico" \
+			46 "Sega32X" \
+			47 "SegaCD" \
+			48 "SG-1000" \
+			49 "Sharp X68000" \
+			50 "SNES" \
+			51 "Super Famicom" \
+			52 "SuperGrafx" \
+			53 "TG16" \
+			54 "TG-CD" \
+			55 "TRS-80" \
+			56 "Videopac - Odyssey 2" \
+			57 "Virtualboy" \
+			58 "Wii" \
+			59 "WonderSwan" \
+			60 "WonderSwan Color" \
+			61 "ZX Spectrum" \
+			62 "ZX81" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -741,26 +746,27 @@ clear
 			39) show_bezel psx ;;
 			40) show_bezel atomiswave ;;
 			41) show_bezel saturn ;;
-			42) show_bezel dreamcast ;;
-			43) show_bezel naomi ;;
-			44) show_bezel pico ;;
-			45) show_bezel sega32x ;;
-			46) show_bezel segacd ;;
-			47) show_bezel sg-1000 ;;
-			48) show_bezel x68000 ;;
-			49) show_bezel snes ;;
-			50) show_bezel sfc ;;
-			51) show_bezel supergrafx ;;
-			52) show_bezel tg16 ;;
-			53) show_bezel tg-cd ;;
-			54) show_bezel trs-80 ;;
-			55) show_bezel videopac ;;
-			56) show_bezel virtualboy ;;
-			57) show_bezel wii ;;
-			58) show_bezel wonderswan ;;
-			59) show_bezel wonderswancolor ;;
-			60) show_bezel zxspectrum ;;
-			61) show_bezel zx81 ;;
+			42) show_bezel scv ;;
+			43) show_bezel dreamcast ;;
+			44) show_bezel naomi ;;
+			45) show_bezel pico ;;
+			46) show_bezel sega32x ;;
+			47) show_bezel segacd ;;
+			48) show_bezel sg-1000 ;;
+			49) show_bezel x68000 ;;
+			50) show_bezel snes ;;
+			51) show_bezel sfc ;;
+			52) show_bezel supergrafx ;;
+			53) show_bezel tg16 ;;
+			54) show_bezel tg-cd ;;
+			55) show_bezel trs-80 ;;
+			56) show_bezel videopac ;;
+			57) show_bezel virtualboy ;;
+			58) show_bezel wii ;;
+			59) show_bezel wonderswan ;;
+			60) show_bezel wonderswancolor ;;
+			61) show_bezel zxspectrum ;;
+			62) show_bezel zx81 ;;
             *)  break ;;
         esac
     done
@@ -1281,6 +1287,21 @@ saturn)
     cp /opt/retropie/configs/saturn/retroarch.cfg /opt/retropie/configs/saturn/retroarch.cfg.bkp
     sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Sega-Saturn.cfg"' /opt/retropie/configs/saturn/retroarch.cfg
     sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/saturn/retroarch.cfg
+  fi
+  ;;
+scv)
+  ifexist=`cat /opt/retropie/configs/scv/retroarch.cfg |grep "input_overlay" |wc -l`
+  if [[ ${ifexist} > 0 ]]
+  then
+    cp /opt/retropie/configs/scv/retroarch.cfg /opt/retropie/configs/scv/retroarch.cfg.bkp
+    cat /opt/retropie/configs/scv/retroarch.cfg |grep -v input_overlay |grep -v aspect_ratio |grep -v custom_viewport > /tmp/retroarch.cfg
+    cp /tmp/retroarch.cfg /opt/retropie/configs/scv/retroarch.cfg
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Super-Cassette-Vision.cfg"' /opt/retropie/configs/scv/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/scv/retroarch.cfg
+  else
+    cp /opt/retropie/configs/scv/retroarch.cfg /opt/retropie/configs/scv/retroarch.cfg.bkp
+    sed -i '2i input_overlay = "/opt/retropie/configs/all/retroarch/overlay/Super-Cassette-Vision.cfg"' /opt/retropie/configs/scv/retroarch.cfg
+    sed -i '3i input_overlay_opacity = "1.000000"' /opt/retropie/configs/scv/retroarch.cfg
   fi
   ;;
 sega32x)
@@ -1880,6 +1901,7 @@ echo "Bandai WonderSwan Color                         lr-beetle-wswan" >> /tmp/b
 echo "ColecoVision                                    lr-bluemsx" >> /tmp/bezelprojectinfo.txt
 echo "Commodore 64, VIC-20, PET                       lr-vice" >> /tmp/bezelprojectinfo.txt
 echo "Commodore Amiga                                 lr-puae, lr-puae2021" >> /tmp/bezelprojectinfo.txt
+echo "Epoch Super Cassette Vision                     lr-emuscv" >> /tmp/bezelprojectinfo.txt
 echo "GCE Vectrex                                     lr-vecx" >> /tmp/bezelprojectinfo.txt
 echo "MAME                                            lr-various" >> /tmp/bezelprojectinfo.txt
 echo "Mattel Intellivision                            lr-freeintv" >> /tmp/bezelprojectinfo.txt
